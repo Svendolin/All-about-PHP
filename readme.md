@@ -17,21 +17,21 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ***
 ## Folder Directory
 ***
-1. [Week 01](#week01)
-2. [Week 02](#week02)
-3. [Week 03](#week03)
-4. [Week 04](#week04)
-5. [Week 05](#week05)
-6. [Week 06](#week06)
+1. [Week 01](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_(i))
+2. [Week 02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_(i))
+3. [Week 03](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_(i))
+4. [Week 04](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_(i))
+5. [Week 05](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_(i))
+6. [Week 06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_(i))
 
 
 | Topic | Content  | 
 |:--------------| :--------------|
-| Week 01 | direction - errortest - hello world - `include()` |
-| Week 02 | `3 Ways to integrate Arrays[]` - `Associative and Mutlidimensional Arrays[]` - Blog Layout - include() folder |
-| Week 03 | formvalidation with style + basic design - `$_get()` vs `$_post()` Request - `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
-| Week 04 | login.php WITH protected area - login.php (hashed) WITH protected area - login.php WITHOUT protected area - login.php with timeout session - hashing encryption lab - session vs cookie |
-| Week 05 |  `projectstructure (BASIC)` - `projectstructure (FRONT CONTROLLER)` - `projectstructure (DYNAMIC NAV out of header)` |
+| Week&nbsp;01 | direction , errortest , hello world , `include()` |
+| Week&nbsp;02 | `3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
+| Week&nbsp;03 | formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
+| Week&nbsp;05 |  `projectstructure (BASIC)` , `projectstructure (FRONT CONTROLLER)` , `projectstructure (DYNAMIC NAV out of header)` |
 
 <br />
 <br />
