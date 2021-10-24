@@ -8,6 +8,8 @@
 
 This "All about PHP"-repository catches up its focus on all the PHP I've learned, commented and written through the years as a **SAE-Web Development** student with exercise lessons every week as well as tutorial videos on _Youtube_.         
 Direct Link to the place where I'm studying are you going to find [HERE](https://www.sae.edu/che/de?utm_source=PS01&gclid=Cj0KCQjw-4SLBhCVARIsACrhWLVIaD_aUt7y4brT7tqMW9o7tskgb1vjQqJFkzQwkwdN_40_Ls7MgAEaAtXxEALw_wcB)
+
+⚫🔴🟡 IMPORTANT: Comments in each file are commented in german⚫🔴🟡
 <br />
 <br />
 
@@ -15,17 +17,21 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ***
 ## Folder Directory
 ***
-1. [JQuery Basics](#basics)
-2. [Animations](#animations)
-3. [Events](#events)
-4. [Sliders](#collaboration)
-5. [Accordion](#faqs)
-8. [ModalPopups](#faqs)
+1. [Week 01](#week01)
+2. [Week 02](#week02)
+3. [Week 03](#week03)
+4. [Week 04](#week04)
+5. [Week 05](#week05)
+6. [Week 06](#week06)
+
 
 | Topic | Content  | 
 |:--------------| :--------------|
-| Basics | Document Ready Function // Selectors // Append and Prepend // Functions (colour change) // Click Events (Add and delete content) // Hover (over text) |
-| ...| ... |
+| Week 01 | direction - errortest - hello world - `include()` |
+| Week 02 | `3 Ways to integrate Arrays[]` - `Associative and Mutlidimensional Arrays[]` - Blog Layout - include() folder |
+| Week 03 | Formvalidation with style + basic design - `$_get()` vs `$_post()` Request - `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week 04 | login.php WITH protected area - login.php (hashed) WITH protected area - login.php WITHOUT protected area - hashing encryption lab - session vs cookie |
+| Week 05 | login.php WITH timeout session - `projectstructure (BASIC)` - `projectstructure (FRONT CONTROLLER)` - `projectstructure (DYNAMIC NAV)` |
 
 <br />
 <br />
