@@ -33,7 +33,7 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 
 
 ***
-## Technologies ✅
+## Technologies and Installization ✅
 ***
  XAMPP:
 * Use XAMPP Windows Systems. Its a local web-server (stack) for your local ideas and projects. [DOWNLOAD XAMPP HERE](https://www.apachefriends.org/de/index.html)
