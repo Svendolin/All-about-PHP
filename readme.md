@@ -29,9 +29,9 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 |:--------------| :--------------|
 | Week 01 | direction - errortest - hello world - `include()` |
 | Week 02 | `3 Ways to integrate Arrays[]` - `Associative and Mutlidimensional Arrays[]` - Blog Layout - include() folder |
-| Week 03 | Formvalidation with style + basic design - `$_get()` vs `$_post()` Request - `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
-| Week 04 | login.php WITH protected area - login.php (hashed) WITH protected area - login.php WITHOUT protected area - hashing encryption lab - session vs cookie |
-| Week 05 | login.php WITH timeout session - `projectstructure (BASIC)` - `projectstructure (FRONT CONTROLLER)` - `projectstructure (DYNAMIC NAV)` |
+| Week 03 | formvalidation with style + basic design - `$_get()` vs `$_post()` Request - `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week 04 | login.php WITH protected area - login.php (hashed) WITH protected area - login.php WITHOUT protected area - login.php with timeout session - hashing encryption lab - session vs cookie |
+| Week 05 |  `projectstructure (BASIC)` - `projectstructure (FRONT CONTROLLER)` - `projectstructure (DYNAMIC NAV out of header)` |
 
 <br />
 <br />
