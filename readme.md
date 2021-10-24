@@ -48,11 +48,13 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 
 USEFUL STEPS:
 
-1. Download and Save. Open xampp-control.exe
+1. Download and open xampp-control.exe
 2. Start Apache and MySQL
 3. Empty htdocs for the very first use. This will be your index
 4. Adjust XAMPP control panel for the very first use as well:
-5. Apache > Config > php.ini > change to I) display_error: on AND II) error_reporting: E_ALL
+   * Apache > Config > php.ini > Change to: 
+   * I) display_error: on 
+   * II) error_reporting: E_ALL
 6. Navigate through the files via htdocs and open it via Visual Studio Code to work with
 7. Visit your work in your browser. Lifeserver doesnt work, so write "localhost" in your URL of your browser instead
 
