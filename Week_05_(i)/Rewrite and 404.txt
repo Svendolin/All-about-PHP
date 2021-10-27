@@ -1,0 +1,15 @@
+Error 404:
+Wenn wir als Client auf einer Webseite etwas anfragen, was nicht auf dem Server existiert (Webbrowser kann keine Verbindung zum Server herstellen = 
+Server erreichbar, die Seite aber nicht) =>  = 404 wird ausgeworfen!
+
+Gründe: 
+URL Umleitung muss stimmen, Pfade müssen sauber sein.
+Websites müssen externe Links regelmässig überprüfen
+(Hängebrückenprinzip: Start (Webseite) und Ende(Server), Brücke(Pfad)muss sauber sein, d.h einzelne Holzbretter (URL Stücke) intakt! Ansonsten: Warnung.
+
+1) Dem Server mitteilen, dass dies eine 404-Fehlerseite ist: Anweisungen an den Server mit einer .htaccess Datei
+
+ErrorDocument 404 /error404.html
+
+Damit wird dem Server mitgeteilt, dass er bei einem 404-Fehler die Datei error404.html im Stammverzeichnis (Root Directory) laden soll.
+Doch wie geht das?

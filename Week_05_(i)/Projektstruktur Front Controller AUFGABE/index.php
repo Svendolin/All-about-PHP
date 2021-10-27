@@ -25,4 +25,3 @@ $seite = 'index.php';  // Name der Datei, der in der Navigation abgefragt wird
 		</section>
 		
 <?php include('html/footer.html.php'); ?>
-		

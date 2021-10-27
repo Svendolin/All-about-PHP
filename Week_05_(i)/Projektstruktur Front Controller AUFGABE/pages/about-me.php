@@ -4,7 +4,7 @@ include('includes/nav.php'); // include des Nav Arrays
 
 $seite = 'about-me.php'; // Name der Datei, der in der Navigation abgefragt wird
 ?>
-<?php include(INCLUDE_FOLDER.'/header.html.php'); // einsatz der Konstante ?>
+<?php include('html/header.html.php'); // einsatz der Konstante ?>
 	
 	
 		<section>
@@ -16,4 +16,4 @@ $seite = 'about-me.php'; // Name der Datei, der in der Navigation abgefragt wird
 			</div>
 		</section>
 		
-<?php include(INCLUDE_FOLDER.'/footer.html.php'); ?>
+<?php include('html/footer.html.php'); ?>
