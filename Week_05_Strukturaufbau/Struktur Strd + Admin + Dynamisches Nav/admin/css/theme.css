@@ -1,0 +1,11 @@
+
+.navbar-dark, #footer {
+	background-color:#111111 !important;
+}
+
+#footer {
+	position:absolute;
+	width:100%;
+	bottom:0;
+	padding:20px 0;
+}
