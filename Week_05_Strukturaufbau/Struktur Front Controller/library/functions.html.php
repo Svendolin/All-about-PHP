@@ -3,6 +3,8 @@
  * @param array $nav_array - zweidimensionales Array, Subarrays müssen einen key 'link' und einen key 'title' haben
  * @return string nav HTML
  */
+
+ // Wird für dieses File NICHT verwendet, Einbau bereits via includes > html > header.html.php
 function generateNav($nav_array, $nav_classes){
 	$html = '';
 	foreach( $nav_array as $item ) {
@@ -24,3 +26,4 @@ function generateNav($nav_array, $nav_classes){
 	return $html;
 }
 ?>
+

@@ -41,6 +41,7 @@ if( file_exists('scripts/'.$seite.'.php') ){ // oder is_file (weitere Variante)
 		}else{
 			// 404
 			?>
+			<!-- HTML Zwischenstück, ansonsten durchgängig ein php Gerüst mit einem include('error/error404.html) -->
 			<h3>404 - Seite nicht gefunden</h3>
 			<?php
 		}
