@@ -17,8 +17,8 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ***
 ## Folder Directory
 ***
-1. [Week_01](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_(i))
-2. [Week_02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_(i))
+1. [Week_01](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
+2. [Week_02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Blog%2C%20Include)
 3. [Week_03](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_(i))
 4. [Week_04](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_(i))
 5. [Week_05](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_(i))
@@ -28,11 +28,11 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 | Topic | Content  | 
 |:--------------| :--------------|
 | Week&nbsp;01 | direction , errortest , hello world , `include()` |
-| Week&nbsp;02 | `3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
+| Week&nbsp;02 | `Schreibweisen PHP - 3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
 | Week&nbsp;03 | formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
-| Week&nbsp;06 | MySQL Database (blog) |
+| Week&nbsp;06 | MySQL Database (blog) working with `MyPHPAdmin` |
 
 <br />
 <br />
@@ -46,6 +46,8 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 * Use XAMPP Windows Systems. Its a local web-server (stack) for your local ideas and projects. [DOWNLOAD XAMPP HERE](https://www.apachefriends.org/de/index.html)
 * Use MAMP if you're working on a MAC: [DOWNLOAD MAMP HERE](https://www.mamp.info/en/mac/)
 * Use WAMP if you want to work with another stack: [DOWNLOAD WAMP HERE](https://www.wampserver.com/en/)
+<br />
+<br />
 
 USEFUL STEPS:
 
@@ -58,6 +60,10 @@ USEFUL STEPS:
    * II) error_reporting: E_ALL
 6. Navigate through the files via htdocs and open it via Visual Studio Code to work with
 7. Visit your work in your browser. Lifeserver doesnt work, so write "localhost" in your URL of your browser instead
+
+<br />
+<br />
+MyPHPAdmin:
 
 
 <br />
