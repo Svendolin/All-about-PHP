@@ -18,11 +18,11 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ## Folder Directory
 ***
 1. [Week_01](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
-2. [Week_02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Blog%2C%20Include)
-3. [Week_03](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_(i))
-4. [Week_04](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_(i))
-5. [Week_05](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_(i))
-6. [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_(i))
+2. [Week_02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
+3. [Week_03](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
+4. [Week_04](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
+5. [Week_05](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
+6. [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
 
 | Topic | Content  | 
