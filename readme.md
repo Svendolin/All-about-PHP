@@ -42,14 +42,21 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ***
 ## Technologies and Installization ✅
 ***
- XAMPP:
+PHP:
+* PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely used and general-purpose open source scripting language that is specifically suited for web programming and can be embedded in HTML.  [GET MORE DETAILS HERE](https://www.php.net/manual/de/intro-whatis.php)
+
+* Are you new to PHP? Check out the  [PHP DOCUMENTATION HERE](https://www.php.net/docs.php)
+<br />
+<br />
+
+ XAMPP - INSTALLIZATION:
 * Use XAMPP Windows Systems. Its a local web-server (stack) for your local ideas and projects. [DOWNLOAD XAMPP HERE](https://www.apachefriends.org/de/index.html)
 * Use MAMP if you're working on a MAC: [DOWNLOAD MAMP HERE](https://www.mamp.info/en/mac/)
 * Use WAMP if you want to work with another stack: [DOWNLOAD WAMP HERE](https://www.wampserver.com/en/)
 <br />
 <br />
 
-USEFUL STEPS:
+XAMPP - USEFUL STEPS:
 
 1. Download and open xampp-control.exe
 2. Start Apache and MySQL
@@ -64,6 +71,8 @@ USEFUL STEPS:
 <br />
 <br />
 MyPHPAdmin:
+
+1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
 
 
 <br />
