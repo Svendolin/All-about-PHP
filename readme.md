@@ -73,6 +73,7 @@ XAMPP - USEFUL STEPS:
 MyPHPAdmin:
 
 1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
+2.
 
 
 <br />

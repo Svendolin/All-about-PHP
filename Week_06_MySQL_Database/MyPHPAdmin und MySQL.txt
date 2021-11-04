@@ -1,0 +1,133 @@
+MySQL auf PHPMyAdmin verwenden STEP BY STEP:
+(Daten unabhängig zum Layout)
+- Lehrerin quasi die Applikation, die Daten (Ihr Gedächtnis) sind in Index-Spalten aufgeteilt (z.B. Ämtli, Stundenpläne, Essen)
+
+1) In Browser im URL Fenster eingeben:
+http://localhost/phpmyadmin/
+
+Datenbanken erstellen, Strukturen erstellen etc
+
+2) Datenbanken > Neue Datenbank anlegen > wdd920_blog (Server befehl geben, wo die Daten geholt werden müssen). >
+Default Zeichensatz wählen > utf8-unicode-ci > anlegen
+
+3) Importieren > Datei auswählen (in unserem BSP blog_db.sql) wählen > Format passt sich an via SQL > OK 
+(Alles sollte grün werden)
+=> WICHTIG: Listen können nicht komplett ABER einzeln aktualisiert werden. 
+   Immer am besten die alte löschen und neue importieren
+
+4) Datenbank: wdd920_blog oben anklicken, Übersicht anzeigen lassen (admins / blogposts) hin und her navigieren links
+(((PRO TIP: Rechtsklick auf die gewünschte Unterseite in der Navigation links und in neuem Tab öffnen)))
+
+5) Erzeuge Tabelle > Name: Comment (Oben können noch mehr Spalten hinzugefügt werden) > 
+Name-Spalte mit passenden Bezeichnungen für dein Projekt wählen
+
+6) A_I (AUTO INCREMENT) = "Sich selbst erhöhend" > Erstes Feld anklicken von IDcomment = Wird zu Primary, d.h erster PRIMARY KEY (PRIMÄRSCHLÜSSEL)
+Es gibt Primärschlüssel VS Fremdschlüssel
+
+7) Weitere Felder anpassen(DATENTYPEN): so z.B. 
+- VARCHAR ist variable Charakterbeschränkung. Diese sollte man eingeben, z.B. maximal 100 Zeichen für den Namen
+- TEXT = Gaanz viel text schreiben ohne Beschränkung.
+- BOOLEAN = True or False als Bestätigung
+- INT = Datenvermögen (Länge) der ID. Mit INT auf der sicheren Seite. Wird das Zeichenvermögen überschritten, wird nichts mehr gespeichert
+- TINYINT (1Byte, 255 Ganzzahldaten) = 0 und 1, für true or false bis hin zu BIGINT (8Byte, Milliarden von Ganzzahldaten*)
+
+Genaue Zahlendatentypen, die Ganzzahldaten verwenden:
+Um Platz in der Datenbank zu sparen, verwende den kleinsten Datentyp, der zuverlässig alle möglichen Werte enthalten kann. 
+Zum Beispiel würde TINYINT für das Alter einer Person ausreichen, da niemand mehr als 255 Jahre alt werden kann. 
+Für das Alter eines Gebäudes würde tinyint jedoch nicht ausreichen, da ein Gebäude mehr als 255 Jahre alt sein kann.
+
+- TIMESTAMP sowie Standard mit "current_time" = Bei jeder Speicherung die aktuelle Zeit anzeigen zu lassen
+Der "Standard" ist eine zusätzliche Möglichkeit, den Defaultwert zu beeinflussen (z.b wie definiert: 0 = false)
+ 
+8) comment auswählen > Einfügen (Spalte einfügen und manuell Inhalte eingeben, wie bei der Newsletterliste)
+
+9) Exportieren > Angepasst (Ausgewählte Stücke exportieren) als Backup (Grundoption passt mit allen Einstellungen) > OK
+(Diese Daten müssen dann für den Dozenten abgelegt werden zum anschauen: ANSCHAUEN, ob alles exportiert wurde vor der Abgabe!)
+Wichtig: Aus dem wdd920_blog Feld ausführen = Alle files werden exportiert (default mässig)
+Befindet man sich aber z.B. im blogpost file, wird nur dieses abgespeichert
+
+10) Rechte = Privilegien den Nutzern* zuschreiben (*Nutzer von PHPMyAdmin, falls es z.B. mehrere Admin Nutzer geben würde)
+
+GOOD to KNOW:
+MD5() = Methode, einen Hash zu generieren
+Mockaroo.com = Fake Daten generieren für Testzwecke
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MySQL CRUD:
+4 Befehle a la CRUD (Create / Read / Update / Delete) um alles zu lösen im MySQL (oder in PHP selbst):
+
+CREATE: Füge einen neuen Blog Post hinzu mit dem Titel 'MySQL in 5 Minuten' und einer Beschreibung
+READ: 	Lese alle Spalten aus Tabelle...
+UPDATE: Passe field1 und field2 mit neuen Werten an [bei allen Datensätzen, bei denen die WHERE-Bedingung zutrifft]
+DELETE: Lösche alle Datensätze aus der Tabelle [bei denen die WHERE-Bedingung zutrifft]
+
+C: INSERT INTO `` (`admin_name`,`...`,`...`) VALUES ('Sven Kamm','...','...')
+R: SELECT field_names FROM `` WHERE ``=``
+U: UPDATE `` SET ``= WHERE ``= AND/OR ...
+D: DELETE FROM `` WHERE ``
+
+IN phpMyAdmin anwenden:
+1) PhpMyAdmin öffnen > Anzeigen (blogpost anklicken) > SQL (Abfragefeld weiterhin anzeigen) checked lassen (So sehen wir die SQL Queryboy weiterhin) 
+und können dann FILTERN:
+2) Änderungen vornehmen (Doppelklick auf Spaltenfile erleichtert die Eingabe bzw setzt diesen Satz ein) und mit OK bestätigen
+
+Das File erkennt Syntax Error:
+
+Von: SELECT * FROM `blogpost` WHERE 1 
+ZU: SELECT * FROM `blogpost` WHERE `post_created` > '2021-01-01 00:00:00'$
+
+Schreibweisen können angepasst werden:
+
+
+------------------------------------------------ auslesen aller (* = alle) Blogposts erstes Halbjahr 2021: -----------------------------------
+
+SELECT * 
+FROM `blogpost` 
+WHERE `post_created` > '2021-01-01 00:00:00'
+AND `post_created` < '2021-07-01 00:00:00'
+
+------------------------------------------------ auslesen von Spalte TITEL und ERSTELLDATUM aller Blogposts erstes Halbjahr 2021: ------------
+
+SELECT `post_title`,`post_created`
+FROM `blogpost` 
+WHERE `post_created` > '2021-01-01 00:00:00'
+AND `post_created` < '2021-07-01 00:00:00'
+
+------------------------------------------------ auslesen der ersten 3 Blogposts (Sortieren): ------------------------------------------------
+
+SELECT `post_title`,`post_created`
+FROM `blogpost`
+-- https://dev.mysql.com/doc/refman/8.0/en/select.html (Order by = sortieren)
+-- (DESC = Absteigend vom neuesten Blogpost):
+ORDER BY `post_created` DESC
+
+------------------------------------------------ auslesen der ersten 3 Blogposts (Sortieren) limitiert auf 3 Stück: --------------------------
+
+SELECT `post_title`,`post_created`
+FROM `blogpost`
+-- https://dev.mysql.com/doc/refman/8.0/en/select.html (Order by = sortieren)
+-- (DESC = Absteigend vom neuesten Blogpost):
+ORDER BY `post_created` DESC LIMIT 0, 3
+
+------------------------------------------------ auslesen der neuesten Blogposts limitiert auf 3 pro Seite: ----------------------------------
+-- Seite 1
+SELECT `post_title`,`post_created`
+FROM `blogpost`
+--                             0 = Start, 3 = Länge
+ORDER BY `post_created` DESC LIMIT 0, 3;
+
+-- Seite 2
+SELECT `post_title`,`post_created`
+FROM `blogpost`
+--                             3 = Start, 3 = Länge
+ORDER BY `post_created` DESC LIMIT 3, 3;
+
+-- Seite 3
+SELECT `post_title`,`post_created`
+FROM `blogpost`
+--                             6 = Start, 3 = Länge
+ORDER BY `post_created` DESC LIMIT 6, 3
+
+
+((( Wichtig: Hier sind 3 Befehle nacheinander vermerkt. Jeder Befehl wird mit einem ; abgeschlossen )))
+
+
