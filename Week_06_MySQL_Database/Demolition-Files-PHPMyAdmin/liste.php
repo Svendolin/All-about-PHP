@@ -1,12 +1,15 @@
 <?php 
-// ---- DATEN AUSLESEN ----
+// --------------- DATEN AUSLESEN ------------------- //
+
+
 require_once('connect.php'); // Hiermit sollten wir mit der Datenbank verbunden sein
 
-// Mit 3 Post Limit:
+
+// Mit 3 Post Limit (Auskommentiert):
 // $query = "SELECT * FROM `blogpost` ORDER BY `IDblogpost` ASC LIMIT 0,3";
 
 // Ohne Post Limit:
-$query = "SELECT * FROM `blogpost` ORDER BY `IDblogpost`;
+$query = "SELECT * FROM `blogpost` ORDER BY `IDblogpost`";
 // Befehl senden  als Resultat $res (Name frei wählbar)
 $resultat = mysqli_query($conn, $query); // Daten bestellt
 
@@ -25,6 +28,7 @@ echo '</pre>';
 
 ?>
 
+
 <table class="uk-table uk-table-divider uk-table-striped">
 	<tbody><tr>
 		<th>ID</th>
@@ -36,6 +40,7 @@ echo '</pre>';
 		<th> </th>
 	</tr>
 
+	<!-- Dieser Bereich werden wir mehrmals anzeigen und durch die Datenbank laufen lassen -->
 	<?php foreach($daten as $datensatz) { ?>
 	<tr>
 		<td> <?php echo $datensatz['IDblogpost'] ?> </td>

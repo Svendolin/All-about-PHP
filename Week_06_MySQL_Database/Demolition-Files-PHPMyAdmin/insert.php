@@ -1,6 +1,6 @@
 
 <?php
-// ---- DATEN EINTRAGEN ----
+// --------------- INSERT = DATEN EINTRAGEN ------------------- //
 
 require_once('connect.php'); // Hiermit sollten wir mit der Datenbank verbunden sein
 
@@ -20,12 +20,12 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 		print_r($_FILES);
 		echo '</pre>';
 
-
+		// Existenz prüfen, ein Bild richig hochzuladen:
 		if ( isset($_FILES['post_image']) ) {
-			$vonhier = $_FILES['post_image']['tmp_name'];
-			$hierhin = 'images/hochgeladenes_bild_'.time().'.jpg';
+			$vonhier = $_FILES['post_image']['tmp_name']; // Bild wird als erstes als ein tmp-file angesehen
+			$nachda = 'images/hochgeladenes_bild_'.time().'.jpg'; //Bild wird mit diesem Namen überschrieben und an dieser Stelle abgelegt (images Ordner)
 			
-			$hochgeladen = move_uploaded_file($vonhier, $hierhin);
+			$hochgeladen = move_uploaded_file($vonhier, $nachda);
 			var_dump($hochgeladen);
 		}
     
@@ -37,7 +37,7 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
     $post_longtext = $_POST['post_longtext'];
 }
 
-// Nach Validierung (in phpMyAdmin SQL einegegeben)
+// Nach Validierung (in phpMyAdmin SQL eingegeben) und mit den Variablen angepasst
 $query = "INSERT INTO `blogpost`
 (`post_title`,`post_author`,`post_category`,`post_shorttext`,`post_longtext`)
 VALUES 
