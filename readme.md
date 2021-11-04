@@ -32,7 +32,7 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 | Week&nbsp;03 | formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
-| Week&nbsp;06 | MySQL Database (blog) working with `MyPHPAdmin` |
+| Week&nbsp;06 | MySQL Database (blog) and (demolition files) working with `MyPHPAdmin` |
 
 <br />
 <br />
@@ -73,7 +73,27 @@ XAMPP - USEFUL STEPS:
 MyPHPAdmin:
 
 1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
-2.
+2. "Databases" > "Create New Database" (give server a command where to fetch data) > "select default charset" > "utf8-unicode-ci" > "Create"
+3. "Import" > "Select File" (format will change to SQL if the data ending is .sql too) 
+     * The file path is shown above (...)>(...)>(...)
+     * Path overview for selections is also displayed on the left in a tree diagram
+     * TIP: Use "right klick" on the desired subpage in the navigation on the left and open in new tab to work faster and cleaner
+4. "Create Table" > Select name column with appropriate labels for your project
+5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
+6. Add the suitable DATATYPES:
+   * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name
+   * TEXT = Write a lot of text without restriction.
+   * BOOLEAN = True or False as confirmation
+   * INT = data capability (length) of the ID. Be on the safe side with INT: If the character capacity is exceeded, there is no room for any further saving data
+   * TINYINT = (1 byte, 255 integer data) vs BIGINT (8 byte, Billions of integer data #)
+   * TIMESTAMP = as well as the default with "current_time": Display the current time on every save.
+The "default" is an additional possibility to influence the default value (e.g. as defined: 0 = false)
+* IMPORTANT: there are exact number data types that use integer data:
+To save space in the database, use the smallest data type that can reliably contain all possible values. 
+For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
+However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
+7. "Export" > (Export selected pieces) as a Backup for safety > "OK"
+
 
 
 <br />
