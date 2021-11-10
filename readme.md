@@ -95,11 +95,19 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 MyPHPAdmin - IMPORT DATABASES:
 
-7. 
+7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
+   
+   * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
+   * Never forget to create a valid database beforehand!
 
 MyPHPAdmin - EXPORT DATABASES (Usually used as a backup):
 
 8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
+
+MENU BAR IN PHPMyAdmin shortly explained: 
+* DISPLAY = Overview
+* STRUCTURE = Column editing 
+* SQL = Data management
 
 
 

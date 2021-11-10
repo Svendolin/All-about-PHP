@@ -17,13 +17,14 @@ $post_longtext = '';
 if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_POST['post_category']) && isset( $_POST['post_shorttext']) && isset( $_POST['post_longtext']) ){
     //print_r($_POST);
 		echo '<pre>';
-		print_r($_FILES);
+		print_r($_FILES); // Superglobales Array = $_FILES, was Informationen zum Bild gibt (Name, Typ, wie Gross) - Wird erst gezeigt, wenn wir das Formular ausfüllen
 		echo '</pre>';
 
-		// Existenz prüfen, ein Bild richig hochzuladen:
+		// --- Existenz prüfen: Ein Bild richig HOCHLADEN: --
 		if ( isset($_FILES['post_image']) ) {
+			$post_image = 'hochgeladenes_bild_'.time().'.jpg'; // Bild wird mit diesem Namen überschrieben...
 			$vonhier = $_FILES['post_image']['tmp_name']; // Bild wird als erstes als ein tmp-file angesehen
-			$nachda = 'images/hochgeladenes_bild_'.time().'.jpg'; //Bild wird mit diesem Namen überschrieben und an dieser Stelle abgelegt (images Ordner)
+			$nachda = 'images/'.$bildname; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner)
 			
 			$hochgeladen = move_uploaded_file($vonhier, $nachda);
 			var_dump($hochgeladen);
@@ -37,12 +38,13 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
     $post_longtext = $_POST['post_longtext'];
 }
 
-// Nach Validierung (in phpMyAdmin SQL eingegeben) und mit den Variablen angepasst
+// Nach Validierung in phpMyAdmin SQL eingegeben) und mit den Variablen angepasst (diese müssen 1:1 so heissen wir in der MySQL Datenbank)
 $query = "INSERT INTO `blogpost`
-(`post_title`,`post_author`,`post_category`,`post_shorttext`,`post_longtext`)
+(`post_title`,`post_author`,`post_category`,`post_shorttext`,`post_longtext`, `post_image`)
 VALUES 
-('{$post_title}', '{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}')";
+('{$post_title}', '{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
 // Befehl senden  als Resultat $res (Name frei wählbar)
+echo $query;
 // $resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt
 
 ?>
