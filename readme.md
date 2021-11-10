@@ -93,9 +93,13 @@ To save space in the database, use the smallest data type that can reliably cont
 For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
 However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
 
-MyPHPAdmin - EXPORT DATABASES:
+MyPHPAdmin - IMPORT DATABASES:
 
-7. "Export" > (Export selected pieces) as a Backup for safety > "OK"
+7. 
+
+MyPHPAdmin - EXPORT DATABASES (Usually used as a backup):
+
+8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
 
 
