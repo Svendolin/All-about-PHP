@@ -70,7 +70,7 @@ XAMPP - USEFUL STEPS:
 
 <br />
 <br />
-MyPHPAdmin:
+MyPHPAdmin - CREATE DATABASES:
 
 1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
 2. "Databases" > "Create New Database" (give server a command where to fetch data) > "select default charset" > "utf8-unicode-ci" > "Create"
@@ -92,6 +92,9 @@ The "default" is an additional possibility to influence the default value (e.g. 
 To save space in the database, use the smallest data type that can reliably contain all possible values. 
 For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
 However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
+
+MyPHPAdmin - EXPORT DATABASES:
+
 7. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
 

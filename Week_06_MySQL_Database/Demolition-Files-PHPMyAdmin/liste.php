@@ -1,16 +1,21 @@
 <?php 
-// --------------- DATEN AUSLESEN ------------------- //
+// --------------- LISTE.PHP = DATEN AUSLESEN ------------------- //
 
 
 require_once('connect.php'); // Hiermit sollten wir mit der Datenbank verbunden sein
 
 
-// Mit 3 Post Limit (Auskommentiert):
+// --- Mit 3 Post Limit (Auskommentiert): --- //
 // $query = "SELECT * FROM `blogpost` ORDER BY `IDblogpost` ASC LIMIT 0,3";
 
-// Ohne Post Limit:
+// --- Ohne Post Limit: --- //
 $query = "SELECT * FROM `blogpost` ORDER BY `IDblogpost`";
-// Befehl senden  als Resultat $res (Name frei wählbar)
+
+/* mysqlli =
+ist eine verbesserte objektorientierte Erweiterung von PHP zum Zugriff 
+auf MySQL-Datenbanken. */
+
+// Befehl senden  als Resultat "$resultat" (Name frei wählbar)
 $resultat = mysqli_query($conn, $query); // Daten bestellt
 
 /* Wegkommentieren, da dieser Datensatz ausgerpintet wird und zum ganzen DAZUZÄHLT

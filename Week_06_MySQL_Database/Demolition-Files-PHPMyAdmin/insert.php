@@ -1,6 +1,6 @@
 
 <?php
-// --------------- INSERT = DATEN EINTRAGEN ------------------- //
+// --------------- INSERT.PHP = DATEN EINTRAGEN ------------------- //
 
 require_once('connect.php'); // Hiermit sollten wir mit der Datenbank verbunden sein
 

@@ -1,5 +1,5 @@
 <?php 
-// Verbindung mit Datenbank aufbauen (db steht für Datenbank)
+// --------------- CONNECT.PHP = VERBINDUNG MIT DATENBANK (DB) AUFBAUEN ------------------- //
 
 
 
