@@ -1,12 +1,16 @@
 
 <?php
 // --------------- INSERT.PHP = DATEN EINTRAGEN ------------------- //
+// --------------------------- CRUD ------------------------------- //
+// --------------------- KREIEREN (CREATE) ------------------------ //
 
-require_once('connect.php'); // Hiermit sollten wir mit der Datenbank verbunden sein
+
+// --- Hiermit sollten wir mit der Datenbank verbunden sein --- //
+require_once('connect.php'); 
 
 
 
-// Datensatz hinzufügen, wenn Formular abgeschickt wird (Leeren Quasi)
+// --- Variablen Initialisieren: ---
 $post_title = '';
 $post_author = '';
 $post_category = '';
@@ -20,35 +24,59 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 		print_r($_FILES); // Superglobales Array = $_FILES, was Informationen zum Bild gibt (Name, Typ, wie Gross) - Wird erst gezeigt, wenn wir das Formular ausfüllen
 		echo '</pre>';
 
-		// --- Existenz prüfen: Ein Bild richig HOCHLADEN: --
+		// --- Existenz prüfen: Ein Bild richig HOCHLADEN: --- //
 		if ( isset($_FILES['post_image']) ) {
 			$post_image = 'hochgeladenes_bild_'.time().'.jpg'; // Bild wird mit diesem Namen überschrieben...
 			$vonhier = $_FILES['post_image']['tmp_name']; // Bild wird als erstes als ein tmp-file angesehen
-			$nachda = 'images/'.$bildname; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner)
+			$nachda = 'images/'.$post_image; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner)
 			
 			$hochgeladen = move_uploaded_file($vonhier, $nachda);
-			var_dump($hochgeladen);
+			var_dump($hochgeladen); // Zum wegkommentieren
 		}
     
-    // Formular abgeschickt - Variablen überschreiben
+    // Formular abgeschickt - Variablen überschreiben (werden damit gefüllt). Die Namen beziehen sich auf die Namen der Inputfelder
     $post_title = $_POST['post_title'];
     $post_author = $_POST['post_author'];
     $post_category = $_POST['post_category'];
     $post_shorttext = $_POST['post_shorttext'];
     $post_longtext = $_POST['post_longtext'];
-}
+		// Nach Validierung in phpMyAdmin SQL eingegeben) und mit den Variablen angepasst (diese müssen 1:1 so heissen wir in der MySQL Datenbank)
 
-// Nach Validierung in phpMyAdmin SQL eingegeben) und mit den Variablen angepasst (diese müssen 1:1 so heissen wir in der MySQL Datenbank)
-$query = "INSERT INTO `blogpost`
-(`post_title`,`post_author`,`post_category`,`post_shorttext`,`post_longtext`, `post_image`)
-VALUES 
-('{$post_title}', '{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
-// Befehl senden  als Resultat $res (Name frei wählbar)
-echo $query;
-// $resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt
+		/* {{{NEU}}} */
 
+		// --- {{CRUD CREATE}} $query zusammenstellen --- //
+		$query = "INSERT INTO `blogpost` 
+		(`post_title`,
+		`post_author`,
+		`post_category`,
+		`post_shorttext`,
+		`post_longtext`, 
+		 `post_image`)
+		 -- // Befehl senden als Resultat ""$resultat" (Name frei wählbar)
+		VALUES 
+		('{$post_title}', '{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
+		
+		// ZUM PRÜFEN: echo $query;
+		$resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt ($conn definiert in connection.php)
+
+		/* mysqlli =
+		ist eine verbesserte objektorientierte Erweiterung von PHP zum Zugriff 
+		auf MySQL-Datenbanken. */
+
+
+		if ($resultat !== false) {
+				$successmessage = 'Dein Blogpost wurde gespeichert!';
+		}
+	}
 ?>
 
+<?php 
+// --- Successmeldung ausgeben --- //
+if (isset($successmessage)) {
+	echo '<div style="color:green;">'.$successmessage.'</div>';
+}
+
+?>
 
 <form action="" method="POST" class="uk-form-horizontal" enctype="multipart/form-data"> <!-- Formular soll verschiedene Datenpakete mitschicken -->
 	<div class="uk-margin">
@@ -68,7 +96,7 @@ echo $query;
 	
 
 	<div class="uk-margin">
-        <label class="uk-form-label">Bild</label>
+        <label class="uk-form-label">Bild (JPG/PNG max 1.MB)</label>
         <div class="uk-form-controls uk-margin">
             <input class="uk-input" type="file" name="post_image" value="">
         </div>
