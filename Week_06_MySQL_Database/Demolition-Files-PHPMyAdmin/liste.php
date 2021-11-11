@@ -35,14 +35,15 @@ echo '</pre>';
 
 
 <table class="uk-table uk-table-divider uk-table-striped">
-	<tbody><tr>
-		<th>ID</th>
-		<th>Titel</th>
-		<th>Erstellungsdatum</th>
-		<th>Autor</th>
-		<th>Kategorie</th>
-		<th> </th>
-		<th> </th>
+	<tbody>
+		<tr>
+			<th>ID</th>
+			<th>Titel</th>
+			<th>Erstellungsdatum</th>
+			<th>Autor</th>
+			<th>Kategorie</th>
+			<th> </th>
+			<th> </th>
 	</tr>
 
 	<!-- Dieser Bereich werden wir mehrmals anzeigen und durch die Datenbank laufen lassen -->
@@ -52,11 +53,11 @@ echo '</pre>';
 		<td> <?php echo $datensatz['post_title'] ?> </td>
 		<td> <?php echo $datensatz['post_created'] ?> </td>
 		<td> <?php echo $datensatz['post_author'] ?> </td>
-		<td> <?php echo $datensatz['post_category'] ?> </td>
-		<td><a class="uk-button uk-button-default uk-button-small" href="blogpost.php?task=edit&amp;id=10"><i class="fas fa-edit"></i></a></td>
-		<td><a class="uk-button uk-button-default uk-button-small" href="blogposts.php?task=delete&amp;id=10"><i class="fas fa-trash-alt"></i></a></td>
+		<td> <?php echo $datensatz['post_category'] ?> </td>       <!-- ⬇ Prepared Links ⬇ = Bereits vorgefertigte Links -->
+		<td><a class="uk-button uk-button-default uk-button-small" href="edit.php?id=<?php echo $datensatz['IDblogpost'] ?>"><i class="edit">EDIT&nbsp;</i></a></td>
+		<td><a class="uk-button uk-button-default uk-button-small" href="delete.php?id=<?php echo $datensatz['IDblogpost'] ?>"><i class="delete">DELETE</i></a></td>
 	</tr>
 
-	<?php } ?>
-	
-</tbody></table>
+	<?php } ?>	
+</tbody>
+</table>

@@ -1,9 +1,10 @@
 
 <?php
 
-// -------------------------- EDIT.PHP = DATEN BEARBEITEN ----------------------------- //
-// ------------------------------------ CRUD ------------------------------------------ //
-// --------------- SPEICHERN > MANIPULIEREN (UPDATE) > LESEN (READ) ------------------- //
+// ------------------------------------ EDIT.PHP = DATEN BEARBEITEN ----------------------------------- //
+// ---------------------------------------------- CRUD ------------------------------------------------ //
+// ----------- 1) SPEICHERN > 2) MANIPULIEREN (CREATE, UPDATE, DELETE) > 3) LESEN (READ) -------------- //
+// ------------------------- Wichtig: Genau sagen, was geupdated werden muss -------------------------- //
 
 
 
@@ -19,7 +20,7 @@ $post_shorttext = '';
 $post_longtext = '';
 
 
-// --- Datensatz hinzufügen, wenn Formular abgeschickt wird = SPEICHERN (Manipulation vor lesen): --- //
+// --- Datensatz hinzufügen, wenn Formular abgeschickt wird = SPEICHERN (Manipulation "CUD" vor lesen "R"): --- //
 // Existenz prüfen:
 if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_POST['post_category']) && isset( $_POST['post_shorttext']) && isset( $_POST['post_longtext']) ){
 	//print_r($_POST);
@@ -44,7 +45,7 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 /* {{{NEU}}} */
 
 
-	// Formular abgeschickt - Variablen überschreiben {{{ERNEUT??}}}
+	// --- Formular abgeschickt - Erste Variablenwerte überschreiben --- //
 	$ID = $_POST['ID'];
 	$post_title = $_POST['post_title'];
 	$post_author = $_POST['post_author'];
@@ -77,7 +78,8 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 
 
 	// --- {{CRUD READ}} = Auslesen mit SELECT(nach allfälliger Manipulation erledigt) --- //
-	if( isset($_GET['id']) ){
+	if( isset($_GET['id']) ){ // Abfragen, um welchen Datensatz es geht.
+		// Durch GET Parameter können wir in der URL: edit.php?  "id=1" schreiben, dadurch lassen wir uns den "willkommen" Blog anzeigen
 		$select_query ="SELECT * FROM `blogpost` WHERE `IDblogpost` = ".$_GET['id'];
 		$select_resultat = mysqli_query($conn, $select_query); // Befehl abgeschickt - job erledigt
 		$datensatz = mysqli_fetch_assoc($select_resultat); // Da ich Daten als assoziative Arrays möchte
@@ -85,14 +87,16 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 		print_r($datensatz);
 		echo '</pre>';
 
-		// --- Formular abgeschickt - Variablen überschreiben {{{ERNEUT??}}} --- //
+		// --- Formular abgeschickt - NEUE Variablenwerte überschreiben --- //
 		$id = $datensatz['IDblogpost'];
 		$post_title = $datensatz['post_title'];
 		$post_author = $datensatz['post_author'];
 		$post_category = $datensatz['post_category'];
 		$post_shorttext = $datensatz['post_shorttext'];
 		$post_longtext = $datensatz['post_longtext'];
-
+	} else {
+		// $id='';  
+		 header('location: liste.php'); // Weiterleitung zur Liste.php
 	}
 
 ?>
