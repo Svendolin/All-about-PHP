@@ -52,10 +52,9 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 		`post_shorttext`,
 		`post_longtext`, 
 		 `post_image`)
-		 -- // Befehl senden als Resultat ""$resultat" (Name frei wählbar)
 		VALUES 
-		('{$post_title}', '{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
-		
+		('{$post_title}','{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
+		// ⬆ Befehl senden als Resultat ""$resultat" (Name frei wählbar) ⬆
 		// ZUM PRÜFEN: echo $query;
 		$resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt ($conn definiert in connection.php)
 
