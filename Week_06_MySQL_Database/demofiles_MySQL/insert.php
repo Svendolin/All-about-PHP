@@ -1,8 +1,8 @@
 
 <?php
 // --------------- INSERT.PHP = DATEN EINTRAGEN ------------------- //
-// --------------------------- CRUD ------------------------------- //
-// --------------------- KREIEREN (CREATE) ------------------------ //
+// ------------------ INSERT = INPUTFORMULAR ---------------------- //
+// ------------------- CRUD (CREATE) KREIEREN --------------------- //
 
 
 // --- Hiermit sollten wir mit der Datenbank verbunden sein --- //
@@ -10,7 +10,7 @@ require_once('connect.php');
 
 
 
-// --- Variablen Initialisieren: ---
+// --- Variablen Initialisieren: --- // 
 $post_title = '';
 $post_author = '';
 $post_category = '';
@@ -20,9 +20,9 @@ $post_longtext = '';
 // Existenz prüfen:
 if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_POST['post_category']) && isset( $_POST['post_shorttext']) && isset( $_POST['post_longtext']) ){
     //print_r($_POST);
-		echo '<pre>';
+		/* echo '<pre>';
 		print_r($_FILES); // Superglobales Array = $_FILES, was Informationen zum Bild gibt (Name, Typ, wie Gross) - Wird erst gezeigt, wenn wir das Formular ausfüllen
-		echo '</pre>';
+		echo '</pre>'; */
 
 		// --- Existenz prüfen: Ein Bild richig HOCHLADEN: --- //
 		if ( isset($_FILES['post_image']) ) {
@@ -31,7 +31,7 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 			$nachda = 'images/'.$post_image; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner)
 			
 			$hochgeladen = move_uploaded_file($vonhier, $nachda);
-			var_dump($hochgeladen); // Zum wegkommentieren
+			// var_dump($hochgeladen); // Zum wegkommentieren
 		}
     
     // Formular abgeschickt - Variablen überschreiben (werden damit gefüllt). Die Namen beziehen sich auf die Namen der Inputfelder
@@ -46,22 +46,17 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 
 		// --- {{CRUD CREATE}} $query zusammenstellen --- //
 		$query = "INSERT INTO `blogpost` 
-		(`post_title`,
-		`post_author`,
-		`post_category`,
-		`post_shorttext`,
-		`post_longtext`, 
-		 `post_image`)
+		(`post_title`,`post_author`,`post_category`,`post_shorttext`,`post_longtext`,`post_image`)
 		VALUES 
 		('{$post_title}','{$post_author}','{$post_category}','{$post_shorttext}','{$post_longtext}','{$post_image}')";
-		// ⬆ Befehl senden als Resultat ""$resultat" (Name frei wählbar) ⬆
 		// ZUM PRÜFEN: echo $query;
-		$resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt ($conn definiert in connection.php)
 
+
+		// --- Befehl senden als Resultat ""$resultat" (Name frei wählbar) --- //
+		$resultat = mysqli_query($conn, $query); // Manipulationsbefehl abgeschickt = Job erledigt ($conn definiert in connection.php)
 		/* mysqlli =
 		ist eine verbesserte objektorientierte Erweiterung von PHP zum Zugriff 
 		auf MySQL-Datenbanken. */
-
 
 		if ($resultat !== false) {
 				$successmessage = 'Dein Blogpost wurde gespeichert!';
@@ -80,7 +75,7 @@ if (isset($successmessage)) {
 <form action="" method="POST" class="uk-form-horizontal" enctype="multipart/form-data"> <!-- Formular soll verschiedene Datenpakete mitschicken -->
 	<div class="uk-margin">
 		<label class="uk-form-label">Titel</label>
-		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_title" value="" required=""></div>
+		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_title" value="<?php echo $post_title; ?>" required=""></div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Status</label>
@@ -106,7 +101,7 @@ if (isset($successmessage)) {
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Autor</label>
-		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_author" placeholder="" value="" required=""></div>
+		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_author" placeholder="" value="<?php echo $post_author; ?>" required=""></div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Kategorie</label>
@@ -119,17 +114,17 @@ if (isset($successmessage)) {
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Short Text</label>
-		<div class="uk-form-controls uk-margin"><textarea class="uk-textarea" name="post_shorttext" required=""></textarea></div>
+		<div class="uk-form-controls uk-margin"><textarea class="uk-textarea" name="post_shorttext" required=""><?php echo $post_shorttext; ?></textarea></div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Text</label>
-		<div class="uk-form-controls uk-margin"><textarea class="uk-textarea" name="post_longtext"></textarea></div>
+		<div class="uk-form-controls uk-margin"><textarea class="uk-textarea" name="post_longtext"><?php echo $post_longtext; ?></textarea></div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label"> </label>
 		<div class="uk-form-controls uk-margin">
 			<input type="submit" class="uk-button uk-button-primary" value="speichern">
-			<a class="uk-button uk-button-default" href="index.php">zurück</a>
+			<a class="uk-button uk-button-default" href="liste.php">zurück</a>
 		</div>
 	</div>
 	

@@ -1,8 +1,9 @@
 
 <?php
 
-// ------------------------------------ EDIT.PHP = DATEN BEARBEITEN ----------------------------------- //
-// ---------------------------------------------- CRUD ------------------------------------------------ //
+// ------------------------------------ EDIT.PHP = DATEN EDITIEREN ------------------------------------ //
+// ------------------------------ ÜBER "EDIT BUTTON" BEITRAG BEARBEITEN ------------------------------- //
+// ----------------------------- Immer bei CRUD UPDATE gilt dieser Ablauf ----------------------------- //
 // ----------- 1) SPEICHERN > 2) MANIPULIEREN (CREATE, UPDATE, DELETE) > 3) LESEN (READ) -------------- //
 // ------------------------- Wichtig: Genau sagen, was geupdated werden muss -------------------------- //
 
@@ -26,20 +27,20 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 	//print_r($_POST);
 	
 	// zuerst: hochgeladenes bild verarbeiten. Die Daten dazu sind in $_FILES zu finden:
-	echo '<pre>';
+	/* echo '<pre>';
 	print_r($_FILES); // Superglobales Array = $_FILES, was Informationen zum Bild gibt (Name, Typ, wie Gross) - Wird erst gezeigt, wenn wir das Formular ausfüllen
-	echo '</pre>';
+	echo '</pre>'; */
 
-	// --- Existenz prüfen: Ein Bild richig HOCHLADEN: --- //
+	// --- Existenz prüfen: Wurde ein Bild HOCHLADEN?: --- //
 	if ( isset($_FILES['post_image']) ) {
 		// Aus tmp-Ordner holen und verschieben
 		$post_image = 'hochgeladenes_bild_'.time().'.jpg'; // Bild wird mit diesem Namen überschrieben...
 		$vonhier = $_FILES['post_image']['tmp_name']; // Bild wird als erstes als ein tmp-file angesehen (Temporärer Pfad)
-		$nachda = 'images/'.$post_image; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner)
+		$nachda = 'images/'.$post_image; //Bild wird an DIESER STELLE abgelegt (In diesem Beispiel = images Ordner = ZIELPFAD)
 		
-		// Verschieben der Datei an den Zielpfad
+		// --- Verschiebt die Datei an den Zielpfad --- //
 		$hochgeladen = move_uploaded_file($vonhier, $nachda);
-		var_dump($hochgeladen); // Zum wegkommentieren
+		// var_dump($hochgeladen); // Zum wegkommentieren
 	}
 
 /* {{{NEU}}} */
@@ -57,7 +58,7 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 	*/
 
 
-	// --- {{CRUD UPDATE}} $query zusammenstellen --- //
+	// --- {{CUDR = UPDATE}} $query zusammenstellen --- //
 	$query = "UPDATE `blogpost` 
 	SET 
 	`post_title` = '{$post_title}',
@@ -77,15 +78,17 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 }
 
 
-	// --- {{CRUD READ}} = Auslesen mit SELECT(nach allfälliger Manipulation erledigt) --- //
+	// --- {{CUDR = READ}} = Auslesen mit SELECT(nach allfälliger Manipulation erledigt) --- //
 	if( isset($_GET['id']) ){ // Abfragen, um welchen Datensatz es geht.
 		// Durch GET Parameter können wir in der URL: edit.php?  "id=1" schreiben, dadurch lassen wir uns den "willkommen" Blog anzeigen
 		$select_query ="SELECT * FROM `blogpost` WHERE `IDblogpost` = ".$_GET['id'];
 		$select_resultat = mysqli_query($conn, $select_query); // Befehl abgeschickt - job erledigt
 		$datensatz = mysqli_fetch_assoc($select_resultat); // Da ich Daten als assoziative Arrays möchte
+		/*
 		echo '<pre>';
 		print_r($datensatz);
 		echo '</pre>';
+		*/
 
 		// --- Formular abgeschickt - NEUE Variablenwerte überschreiben --- //
 		$id = $datensatz['IDblogpost'];
@@ -102,17 +105,18 @@ if( isset( $_POST['post_title']) && isset( $_POST['post_author']) && isset( $_PO
 ?>
 
 <?php 
-// --- Successmeldung ausgeben --- //
+// --- Successmeldung ausgeben, wenn sie existiert --- //
 if (isset($successmessage)) {
 	echo '<div style="color:green;">'.$successmessage.'</div>';
 }
 
 ?>
 
+<!-- Variablen binden wir mit php-echos in das Formular ein an den passenden Bereichen (z.B value="" -->
 <form action="" method="POST" class="uk-form-horizontal" enctype="multipart/form-data"> <!-- Formular soll verschiedene Datenpakete mitschicken -->
 	<div class="uk-margin">
 		<label class="uk-form-label">Titel</label>
-		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_title" value="" required=""></div>
+		<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_title" value="<?php echo $post_title; ?>" required=""></div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label">Status</label>
@@ -161,7 +165,7 @@ if (isset($successmessage)) {
 		<label class="uk-form-label"> </label>
 		<div class="uk-form-controls uk-margin">
 			<input type="submit" class="uk-button uk-button-primary" value="speichern">
-			<a class="uk-button uk-button-default" href="index.php">zurück</a>
+			<a class="uk-button uk-button-default" href="liste.php">zurück</a>
 		</div>
 	</div>
 	

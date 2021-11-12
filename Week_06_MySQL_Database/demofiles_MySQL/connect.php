@@ -5,7 +5,7 @@
 
 $db_server = 'localhost'; // localhost = gleicher server wie mein Script (In den meisten Fällen so) => So versteht PhpMyAdmin die Beziehung zu diesem File
 $db_user = 'root'; // In diesem Fall 'root', sonst "User von bevorzugtem Hoster"
-$db_passwort = ''; // xampp = leer / mamp = 'root'
+$db_passwort = ''; // xampp = leer / mamp = 'root' / online: passwort von eurem Hoster
 $db_name = 'wdd920_blog'; // Name der Datenbank
 
 $conn = mysqli_connect($db_server, $db_user, $db_passwort, $db_name);

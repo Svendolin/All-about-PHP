@@ -1,9 +1,10 @@
 <?php 
 
 // -------------------------- DELETE.PHP = DATEN LÖSCHEN ------------------------------ //
-// ------------------------------------ CRUD ------------------------------------------ //
+// -------------------- ÜBER "EDIT BUTTON" BEITRAG BEARBEITEN ------------------------- //
 // ------------------------------- Löschen (DELETE) ----------------------------------- //
 // ---------------- Wichtig: Genau sagen, was gelöscht werden muss -------------------- //
+
 
 // --- Hiermit sollten wir mit der Datenbank verbunden sein --- //
 require_once('connect.php'); 
@@ -12,10 +13,11 @@ require_once('connect.php');
 if ( isset($_GET['id']) ) {
   $id = $_GET['id'];
 
-  $query = "DELETE FROM `blogpost` WHERE IDblogpost = ".$id;
-  // $query = "DELETE FROM `blogpost` WHERE IDblogpost IN(1,2,3);
+  $query = "DELETE FROM `blogpost` WHERE IDblogpost = ".$id; // Denn jeder Blogpost erhält seine eigene ID
+  // $query = "DELETE FROM `blogpost` WHERE IDblogpost IN(1,2,3); = Mehrere löschen, falls gewünscht
   $select_resultat = mysqli_query($conn, $query); // Befehl abgeschickt - job erledigt
   if ($resultat === false) {
+    // --- Fehlermeldung --- //
 
   /* if( $resultat !== false) {
      "Löschen hat funktioniert" + Rückführung zur liste.php
