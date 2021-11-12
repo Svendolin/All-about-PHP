@@ -144,7 +144,7 @@ What is SQL ?
 | READ | Retrieve and (re)-read the content of your table (*) |
 
 
-* (*) *CUDR* instead of **CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
+* (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
 
 * The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
