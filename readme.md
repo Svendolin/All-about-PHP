@@ -75,7 +75,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-➡ CREATE DATABASES - PHPMyAdmin (SQL FILE):
+➡ *CREATE DATABASES - PHPMyAdmin (SQL FILE):*
 
 (side note: if you work on different computers, be sure to follow step 1. to 6. for the very first time! Then start with step 1. to 2. on your second computer while giving the database the identical name! At the end: Import your SQL-File, step 7., which you've created at the very beginning)
 
@@ -102,7 +102,7 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
-➡ IMPORT DATABASES - PHPMyAdmin:
+➡ *IMPORT DATABASES - PHPMyAdmin:*
 
 7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
@@ -111,13 +111,13 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
-➡ EXPORT DATABASES - PHPMyAdmin (Usually used as a backup):
+➡ *EXPORT DATABASES - PHPMyAdmin (Usually used as a backup):*
 
 8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
 <br />
 
-➡ MENU BAR IN PHPMyAdmin shortly explained: 
+➡ *MENU BAR IN PHPMyAdmin shortly explained:* 
 * DISPLAY = Overview
 * STRUCTURE = Column editing 
 * SQL = Data management
@@ -129,8 +129,24 @@ However, tinyint would not suffice for the age of a building, since a building c
 ***
 ## CRUD Operations in MySQL using SQL ✅
 ***
-> Feel free to contact me if you've seen something wrong, found some errors or struggled on some mistakes! Always happy to have a clean sheet here! :)
+What is SQL ?
+* As we know that we can use MySQL to use "structured query language" to store the data. SQL is the most popular language for adding, accessing and managing content in a database. MySQL provides a set of some basic but mostly **essential operations** that will help you to easily interact with the MySQL database at PHPMyAdmin. These operations are mostly known as *CRUD*, but I rather prefer to call them *CUDR*. Here is the reason why:
 
+
+| Operation | Effect  | 
+|:--------------| :--------------|
+| CREATE | Create Table Command |
+|  | `INSERT INTO `` ` |
+| UPDATE | Altering and changing content or structure of your table |
+| DELETE | Delete Operations |
+| READ | Retrieve and (re)-read the content of your table (*) |
+
+
+* (*) *CUDR* instead of **CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
+
+* The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
+
+* "mysqli" is an improved object-oriented extension of PHP for accessing MySQL databases. 
 
 <br />
 <br />
