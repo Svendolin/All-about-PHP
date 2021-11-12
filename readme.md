@@ -4,10 +4,16 @@
 ***
 <img align="left" alt="JavaScript" width="35px" src="https://raw.githubusercontent.com/github/explore/ccc16358ac4530c6a69b1b80c7223cd2744dea83/topics/php/php.png" /> 
 
-# &nbsp; - ALL ABOUT PHP - ✔
+# &nbsp; - ALL ABOUT PHP AND MYSQL - ✔
 
 This "All about PHP"-repository catches up its focus on all the PHP I've learned, commented and written through the years as a **SAE-Web Development** student with exercise lessons every week as well as tutorial videos on _Youtube_.         
 Direct Link to the place where I'm studying are you going to find [HERE](https://www.sae.edu/che/de?utm_source=PS01&gclid=Cj0KCQjw-4SLBhCVARIsACrhWLVIaD_aUt7y4brT7tqMW9o7tskgb1vjQqJFkzQwkwdN_40_Ls7MgAEaAtXxEALw_wcB)
+
+
+What is PHP ?
+* PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely used and general-purpose open source scripting language that is specifically suited for web programming and can be embedded in HTML.  [GET MORE DETAILS HERE](https://www.php.net/manual/de/intro-whatis.php)
+
+* Are you new to PHP? Check out the  [PHP DOCUMENTATION HERE](https://www.php.net/docs.php)
 
 ⚫🔴🟡 IMPORTANT: Comments in each file are commented in german⚫🔴🟡
 <br />
@@ -32,7 +38,7 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 | Week&nbsp;03 | formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
-| Week&nbsp;06 | MySQL Database (blog) and (demolition files) working with `MyPHPAdmin` |
+| Week&nbsp;06 | MySQL Database (blog) and (demo files) working with `MyPHPAdmin` MySQL Database |
 
 <br />
 <br />
@@ -42,12 +48,6 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 ***
 ## Technologies and Installization ✅
 ***
-PHP:
-* PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely used and general-purpose open source scripting language that is specifically suited for web programming and can be embedded in HTML.  [GET MORE DETAILS HERE](https://www.php.net/manual/de/intro-whatis.php)
-
-* Are you new to PHP? Check out the  [PHP DOCUMENTATION HERE](https://www.php.net/docs.php)
-<br />
-<br />
 
  XAMPP - INSTALLIZATION:
 * Use XAMPP Windows Systems. Its a local web-server (stack) for your local ideas and projects. [DOWNLOAD XAMPP HERE](https://www.apachefriends.org/de/index.html)
@@ -68,19 +68,26 @@ XAMPP - USEFUL STEPS:
 6. Navigate through the files via htdocs and open it via Visual Studio Code to work with
 7. Visit your work in your browser. Lifeserver doesnt work, so write "localhost" in your URL of your browser instead
 
+
 <br />
 <br />
-MyPHPAdmin - CREATE DATABASES:
+
+***
+## MySQL and PHPMyAdmin - Useful Assistance ✅
+***
+➡ CREATE DATABASES - PHPMyAdmin (SQL FILE):
+
+(side note: if you work on different computers, be sure to follow step 1. to 6. for the very first time! Then start with step 1. to 2. on your second computer while giving the database the identical name! At the end: Import your SQL-File, step 7., which you've created at the very beginning)
 
 1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
 2. "Databases" > "Create New Database" (give server a command where to fetch data) > "select default charset" > "utf8-unicode-ci" > "Create"
-3. "Import" > "Select File" (format will change to SQL if the data ending is .sql too) 
+3. Additional infos about the path system:
      * The file path is shown above (...)>(...)>(...)
      * Path overview for selections is also displayed on the left in a tree diagram
      * TIP: Use "right klick" on the desired subpage in the navigation on the left and open in new tab to work faster and cleaner
 4. "Create Table" > Select name column with appropriate labels for your project
 5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
-6. Add the suitable DATATYPES:
+6. Add the suitable DATATYPES, here is a very short overview:
    * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name
    * TEXT = Write a lot of text without restriction.
    * BOOLEAN = True or False as confirmation
@@ -93,22 +100,36 @@ To save space in the database, use the smallest data type that can reliably cont
 For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
 However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
 
-MyPHPAdmin - IMPORT DATABASES:
+<br />
+
+➡ IMPORT DATABASES - PHPMyAdmin:
 
 7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
    * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
    * Never forget to create a valid database beforehand!
 
-MyPHPAdmin - EXPORT DATABASES (Usually used as a backup):
+<br />
+
+➡ EXPORT DATABASES - PHPMyAdmin (Usually used as a backup):
 
 8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
-MENU BAR IN PHPMyAdmin shortly explained: 
+<br />
+
+➡ MENU BAR IN PHPMyAdmin shortly explained: 
 * DISPLAY = Overview
 * STRUCTURE = Column editing 
 * SQL = Data management
 
+
+<br />
+<br />
+
+***
+## CRUD Operations in MySQL using SQL ✅
+***
+> Feel free to contact me if you've seen something wrong, found some errors or struggled on some mistakes! Always happy to have a clean sheet here! :)
 
 
 <br />
