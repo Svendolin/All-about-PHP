@@ -122,6 +122,8 @@ However, tinyint would not suffice for the age of a building, since a building c
 * STRUCTURE = Column editing 
 * SQL = Data management
 
+<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://s3-eu-central-1.amazonaws.com/wp-content-itl/wp-media-folder-it-learner-de/wp-content/uploads/2019/07/MySQL-Server-Neuer-Benutzer-Anmelden-an-phpmyadmin.jpg" />
+
 
 <br />
 <br />
@@ -147,6 +149,10 @@ What is SQL ?
 * The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
 * "mysqli" is an improved object-oriented extension of PHP for accessing MySQL databases. 
+
+
+
+<img align="center" alt="CRUD visually explained" width="800" height="" src="https://miro.medium.com/max/1400/1*2eBdh0vLZjUyCDF6x1EqvQ.png" />
 
 <br />
 <br />
