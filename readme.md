@@ -135,13 +135,19 @@ What is SQL ?
 * As we know that we can use MySQL to use "structured query language" to store the data. SQL is the most popular language for adding, accessing and managing content in a database. MySQL provides a set of some basic but mostly **essential operations** that will help you to easily interact with the MySQL database at PHPMyAdmin. These operations are mostly known as *CRUD*, but I rather prefer to call them *CUDR*. Here is the reason why:
 
 
-| Operation | Effect  | 
-|:--------------| :--------------|
-| CREATE | Create Table Command |
-|  | `INSERT INTO `` ` |
-| UPDATE | Altering and changing content or structure of your table |
-| DELETE | Delete Operations |
-| READ | Retrieve and (re)-read the content of your table (*) |
+| Operation | Effect  | Demo File  | 
+|:--------------| :--------------| :--------------|
+| CREATE | Create Table Command | insert.php 
+|  | `INSERT INTO `` (``,``) VALUES ('{}', '{}') ` 
+| UPDATE | Altering and changing content or structure of your table | edit.php 
+|  | `UPDATE `` SET ``= WHERE ``= ` |
+| DELETE | Delete Operations | delete.php
+|  | `DELETE FROM `` WHERE ``= ` |
+| READ | Retrieve and (re)-read the content of your table (*) | edit.php |
+|  | `SELECT ``,`` FROM `` WHERE `` = '' ` |
+|----| ---- | ---- |
+|| Connection to server database | connect.php |
+|| Overview of the added data content | liste.php |
 
 
 * (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
