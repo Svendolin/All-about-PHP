@@ -88,12 +88,12 @@ XAMPP - USEFUL STEPS:
 4. "Create Table" > Select name column with appropriate labels for your project
 5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
 6. Add the suitable DATATYPES, here is a very short overview:
-   * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name
-   * TEXT = Write a lot of text without restriction.
-   * BOOLEAN = True or False as confirmation
-   * INT = data capability (length) of the ID. Be on the safe side with INT: If the character capacity is exceeded, there is no room for any further saving data
-   * TINYINT = (1 byte, 255 integer data) vs BIGINT (8 byte, Billions of integer data #)
-   * TIMESTAMP = as well as the default with "current_time": Display the current time on every save.
+   * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name (*String based*)
+   * TEXT = Write a lot of text without restriction. (*String based*)
+   * BOOLEAN = True or False as confirmation 
+   * INT = data capability (length) of the ID. Be on the safe side with INT: If the character capacity is exceeded, there is no room for any further saving data (*Numeric*)
+   * TINYINT = (1 byte, 255 integer data) vs BIGINT (8 byte, Billions of integer data #) (*Numeric*)
+   * TIMESTAMP = as well as the default with "current_time": Display the current time on every save. (*Dates*)
 The "default" is an additional possibility to influence the default value (e.g. as defined: 0 = false)
 * IMPORTANT: there are exact number data types that use integer data:
 To save space in the database, use the smallest data type that can reliably contain all possible values. 
@@ -118,11 +118,20 @@ However, tinyint would not suffice for the age of a building, since a building c
 <br />
 
 ➡ *MENU BAR IN PHPMyAdmin shortly explained:* 
-* DISPLAY = Overview
+* BROWSE = Overview
 * STRUCTURE = Column editing 
 * SQL = Data management
 
-<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://s3-eu-central-1.amazonaws.com/wp-content-itl/wp-media-folder-it-learner-de/wp-content/uploads/2019/07/MySQL-Server-Neuer-Benutzer-Anmelden-an-phpmyadmin.jpg" />
+<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://www.sir-apfelot.de/wp-content/uploads/2020/05/phpmyadmin-screenshot.png" />
+
+<br />
+MySQL Tables (Which can be integrated in relations to other tables in many ways, such as 1:N or N:M)
+
+| | Column 1  | Column 2  | Column 3 | Column 4   
+|:--------------| :--------------| :--------------| :--------------| :--------------|
+| Row 1 | Field  | Field | Field  | Field
+| Row 2 | Field  | Field | Field  | Field
+
 
 
 <br />
@@ -148,9 +157,13 @@ What is SQL ?
 |----| ---- | ---- |
 || Connection to server database | connect.php |
 || Overview of the added data content | liste.php |
+|| Delete a specific post (#) | delete.php?id= |
+|| Edit a specific post (#) | edit.php?id= |
 
 
 * (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
+
+* (#) Each post will get its own ID: *"delete.php?id=4"* will delete the post with its ID=4 by pressing a delete button for example. Same thing for the edit button, you update and read this specific post for editing!
 
 * The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
