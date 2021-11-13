@@ -35,7 +35,7 @@ What is PHP ?
 |:--------------| :--------------|
 | Week&nbsp;01 | direction , errortest , hello world , `include()` |
 | Week&nbsp;02 | `Schreibweisen PHP - 3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
-| Week&nbsp;03 | formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week&nbsp;03 | Reg-Formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
 | Week&nbsp;06 | MySQL Database (blog) and (demo files) working with `MyPHPAdmin` MySQL Database |
@@ -76,6 +76,10 @@ XAMPP - USEFUL STEPS:
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
 ➡ *CREATE DATABASES - PHPMyAdmin (SQL FILE):*
+
+
+
+PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
 
 (side note: if you work on different computers, be sure to follow step 1. to 6. for the very first time! Then start with step 1. to 2. on your second computer while giving the database the identical name! At the end: Import your SQL-File, step 7., which you've created at the very beginning)
 
@@ -125,12 +129,18 @@ However, tinyint would not suffice for the age of a building, since a building c
 <img align="center" alt="phpmyadmin main page" width="800" height="" src="https://www.sir-apfelot.de/wp-content/uploads/2020/05/phpmyadmin-screenshot.png" />
 
 <br />
-MySQL Tables (Which can be integrated in relations to other tables in many ways, such as 1:N or N:M)
+
+**MySQL Tables (Which can be integrated in relations to other tables in many ways, such as 1:N or N:M)**
 
 | | Column 1  | Column 2  | Column 3 | Column 4   
 |:--------------| :--------------| :--------------| :--------------| :--------------|
 | Row 1 | Field  | Field | Field  | Field
 | Row 2 | Field  | Field | Field  | Field
+
+* If a primary key column is marked with "AUTO_INCREMENT", then no value has to be set for this column when creating a row. The database system then "automatically sets a value" = *"Auto_Increment"* 
+
+* We can thus create several tables, for example *USERS*, and assign the **primary key** of this ID there. 
+The second table *ORDERS* also receives an ID, a **foreign key**. We can relate these to each other and query (ger: "auslesen") them from multible tables
 
 
 
@@ -161,7 +171,7 @@ What is SQL ?
 || Edit a specific post (#) | edit.php?id= |
 
 
-* (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with CRU first and then (at the end) you "re-read" your changes to your table of your database!
+* (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with "CDU" first and then (at the end) you "re-read" your changes to your table of your database with "R"!
 
 * (#) Each post will get its own ID: *"delete.php?id=4"* will delete the post with its ID=4 by pressing a delete button for example. Same thing for the edit button, you update and read this specific post for editing!
 

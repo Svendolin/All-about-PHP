@@ -6,7 +6,7 @@ require_once('includes/mysql-connect.php'); // Sessioncheck zum schutz des Admin
 
 
 // Daten auslesen
-$query = "SELECT * FROM blogpost WHERE post_state >= 0 ORDER BY post_created DESC";
+$query = "SELECT * FROM blogpost WHERE post_state > 0 ORDER BY post_created DESC";
 $res = mysqli_query($connection, $query);
 $daten = mysqli_fetch_all($res, MYSQLI_ASSOC);
 
@@ -71,7 +71,7 @@ $daten = mysqli_fetch_all($res, MYSQLI_ASSOC);
 							$created = strftime("%Y-%m-%d", $ts );
 							$alias = strtolower(filter_var($datensatz['post_title'], FILTER_SANITIZE_URL));
 							$alias = preg_replace('/[^a-zA-Z0-9_-]+/', '-', strtolower($datensatz['post_title']));
-							$slug = $datensatz['ID'].':'.$alias;
+							$slug = $datensatz['IDblogpost'].':'.$alias;
 							?>
 						
 							<div>

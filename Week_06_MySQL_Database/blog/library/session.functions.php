@@ -36,7 +36,6 @@ function sessioncheck(){
 		return false;
 	}
 	
-
 	session_regenerate_id(); // neue ID für meine Session - hacker kann die alte nun nicht mehr brauchen, falls er sie hat.
 	$_SESSION['login_timestamp'] = time(); // aktualisieren des Timestamp
 	return true; 

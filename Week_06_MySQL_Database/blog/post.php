@@ -17,7 +17,7 @@ if( (int)$articleID == 0 ){
 }
 
 // Daten auslesen
-$query = "SELECT * FROM blogpost WHERE ID=".$articleID;
+$query = "SELECT * FROM blogpost WHERE IDblogpost=".$articleID;
 $res = mysqli_query($connection, $query);
 $post = mysqli_fetch_assoc($res);
 
@@ -84,12 +84,15 @@ require('scripts/commentform.php');
 				<!-- #content -->
 				<?php if( isset($post) && is_array($post) ) { ?>
 				<article id="article-2" class="uk-article" typeof="Article">
+					<?php if( !empty($post['post_image']) ) { ?>
+					<img src="<?php echo IMAGEFOLDER.'/'.$post['post_image'];?>" />
+					<?php } ?>
 				   <h1 property="headline" class="uk-margin-top uk-margin-remove-bottom uk-article-title">
-					  <?php echo utf8_encode($post['post_title']); ?>           
+					  <?php echo $post['post_title']; ?>           
 				   </h1>
 				   <div  class="uk-margin-medium-top" property="text">
-					  <p><?php echo utf8_encode($post['post_shorttext']); ?> </p>
-					  <?php echo utf8_encode($post['post_longtext']); ?> 
+					  <p><?php echo $post['post_shorttext']; ?> </p>
+					  <?php echo $post['post_longtext']; ?> 
 				   </div>
 				  
 					<?php include(HTMLFOLDER.'/commentform.html.php'); ?>

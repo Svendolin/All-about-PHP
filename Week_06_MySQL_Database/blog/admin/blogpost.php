@@ -7,11 +7,17 @@ require_once('../library/session.functions.php'); // alle Session funktionen
 require_once('../library/html.functions.php'); // alle HTML funktionen
 
 session_init(); // initialisiert die Session
-sessioncheck(); // schüztt dieses Script vor Zurgriff ohne Login
+$isLoggedIn = sessioncheck(); // Verwaltet die Session (noch gültig?)
+if($isLoggedIn == false){ 
+	// schüztt dieses Script vor Zurgriff ohne Login
+	header("location: login.php"); 
+	exit;
+}
 
 $hasError = false;
 $errorMsg = array();
 
+$ID = '';
 $title = '';
 $created = '';
 $state ='';
@@ -19,13 +25,29 @@ $author = '';
 $category = '';
 $shorttext = '';
 $text = '';
+$image = '';
 
-if(isset($_POST['article'])){
-	$postID = $_POST['article'];
-}else if(isset($_GET['article'])){
-	$postID = $_GET['article'];
+// ID Variable aus GET oder POST
+if(isset($_GET['id'])){
+	$ID = $_GET['id'];
 }
+
+
+if( !empty($ID) ){
+	$getquery = "SELECT * FROM blogpost WHERE IDblogpost=".$ID;
+	$res = mysqli_query($connection, $getquery);
+	$datensatz = mysqli_fetch_assoc($res);
 	
+	$title = $datensatz['post_title'];
+	$created = $datensatz['post_created'];
+	$state = $datensatz['post_state'];
+	$author = $datensatz['post_author'];
+	$category = $datensatz['post_category'];
+	$shorttext = $datensatz['post_shorttext'];
+	$text = $datensatz['post_longtext']; 
+	$image = $datensatz['post_image']; 
+}
+
 // prüfen ob Daten per POST verschickt wurden (aus dem Formular)
 if( isset($_POST['post_title']) && isset($_POST['post_created']) && isset($_POST['post_author']) && isset($_POST['post_category']) && isset($_POST['post_shorttext']) && isset($_POST['post_longtext']) ){
 	
@@ -41,40 +63,94 @@ if( isset($_POST['post_title']) && isset($_POST['post_created']) && isset($_POST
 	$category = strip_tags( mysqli_real_escape_string($connection, $_POST['post_category']) );
 	$shorttext = strip_tags( mysqli_real_escape_string($connection, $_POST['post_shorttext']) );
 	$text = strip_tags( mysqli_real_escape_string($connection, $_POST['post_longtext']), $erlaubte_tags); // hier werden alle vom Editor angebotenen Tags vom entfernen ausgeschlossen...
+	$ID = (int)$_POST['ID'];
 	
 	
-	// Speichern der Daten in die Datenbank
-	$query = "INSERT INTO blogpost (post_title, post_state, post_created, post_author, post_category, post_shorttext, post_longtext)
-	VALUES ('".$title."', '".$state."', '".$created."', '".$author."', '".$category."', '".$shorttext."', '".$text."' ) ";
-
-	
-	// Befehl abschicken und prüfen...
-	$res = mysqli_query($connection, $query);
-	if( !$res ){
+	// Pflichtfeld Validierung
+	if(empty($title)){
+		$errorMsg[] = 'Bitte einen Titel angeben';
 		$hasError = true;
-		$dbgmsg = '';
-		if(SQLDEBUG == true){
-			$dbgmsg = mysqli_error($connection);
+	}
+	if(empty($author)){
+		$errorMsg[] = 'Bitte Namen für den Autor angeben';
+		$hasError = true;
+	}
+	if(empty($shorttext) || empty($text) ){
+		$errorMsg[] = 'Bitte sowohl den kurzen als auch den langen Text nicht vergessen';
+		$hasError = true;
+	}
+	
+	
+	// wurde ein Bild hochgeladen?
+	if( isset($_FILES['post_image']) && !empty($_FILES['post_image']['tmp_name']) ){
+		// aus tmp ordner holen / verschieben
+		$newImage = 'postimage_'.time().'.jpg'; // Bildname einzeln (für DB Eintrag)
+		$src = $_FILES['post_image']['tmp_name']; // Temporär-Pfad
+		$dest = IMAGEFOLDERPATH.'/'.$newImage; // Zielpfad
+		
+		// verschieben der Datei an den Zielpfad
+		$hochgeladen = move_uploaded_file( $src, $dest );
+		// var_dump($hochgeladen);
+		
+		// altes Bild löschen (es gäbe sicher ncoh bessere Wege, das umzusetzen)
+		if( !empty($image) ){
+			unlink(IMAGEFOLDERPATH.'/'.$image);
 		}
-		$errorMsg[] = 'Konnte nicht speichern. '.$dbgmsg;
+	}
+	
+	
+	if(!$hasError){
+		
+		// Speichern der Daten in die Datenbank
+		if( empty($ID) ){ // Neu
+			$addImageField = empty($newImage)? "":", post_image"; // Zusatz für Bild, nur wenn Bild hochgeladen wurde
+			$addImageValue = empty($newImage)? "":", '{$newImage}'"; // Zusatz für Bild, nur wenn Bild hochgeladen wurde
+			
+			$query = "INSERT INTO blogpost (post_title, post_state, post_created, post_author, post_category, post_shorttext, post_longtext {$addImageField})
+			VALUES ('".$title."', '".$state."', '".$created."', '".$author."', '".$category."', '".$shorttext."', '".$text."' {$addImageValue}) ";
+
+		}else{ // bearbeiten
+			$query = "UPDATE `blogpost` 
+			SET 
+			`post_title` = '{$title}',
+			`post_state` = '{$state}',
+			`post_author` = '{$author}',
+			`post_created` = '{$created}',
+			`post_category` = '{$category}',
+			`post_shorttext` = '{$shorttext}',
+			`post_longtext` = '{$text}'";
+			
+			// nur falls Bild hochgeladen wurde
+			if(!empty($newImage)){
+				$query .= ",
+				`post_image` = '{$newImage}'";
+			}
+			$query .= " WHERE `IDBlogpost` = {$ID}";
+		}
+		// die($query);
+		
+		if(!empty($newImage)){
+			$image = $newImage;
+		}
+		
+		// Befehl abschicken und prüfen...
+		$res = mysqli_query($connection, $query);
+		$newID = mysqli_insert_id($connection);
+		
+		if( !$res ){
+			$hasError = true;
+			$dbgmsg = '';
+			if(SQLDEBUG == true){
+				$dbgmsg = mysqli_error($connection);
+			}
+			$errorMsg[] = 'Konnte nicht speichern. '.$dbgmsg;
+		}
 	}
 	
 	// hat geklappt
 	if(!$hasError){
 		$successMsg = 'Die Daten konnten gespeichert werden';
 	}
-}else if( isset($postID) ){
-	$getquery = "SELECT * FROM blogpost WHERE id=".$postID;
-	$res = mysqli_query($connection, $getquery);
-	$datensatz = mysqli_fetch_assoc($res);
-	
-	$title = $datensatz['post_title'];
-	$created = $datensatz['post_created'];
-	$state = $datensatz['post_state'];
-	$author = $datensatz['post_author'];
-	$category = $datensatz['post_category'];
-	$shorttext = $datensatz['post_shorttext'];
-	$text = $datensatz['post_longtext']; 
 }
 
 
@@ -92,28 +168,38 @@ $additional_scripts[] = "<script>
 <?php include('html/start.php'); ?>
 
 
-
-	<?php if($hasError == true){ ?>
-	<div class="uk-alert">
-		<?php  echo implode('<br>', $errorMsg); ?>
-	</div>
-	<?php } ?>
-
-	<?php if( isset($successMsg) ){ ?>
-	<div class="uk-alert">
-		<?php  echo $successMsg; ?>
-	</div>
-	<?php } ?>
-		
 		<!-- blogpost form -->
 		<section class="uk-section-default uk-padding uk-width">
-			<h2>Blogeintrag <?php echo isset($postID) ? 'editieren':'erstellen' ?></h2>
+			<h2>Blogeintrag <?php echo isset($ID) ? 'editieren':'erstellen' ?></h2>
+			
+			<?php if($hasError == true){ ?>
+			<div class="uk-alert">
+				<?php  echo implode('<br>', $errorMsg); ?>
+			</div>
+			<?php } ?>
+
+			<?php if( isset($successMsg) ){ ?>
+			<div class="uk-alert">
+				<?php  echo $successMsg; ?>
+			</div>
+			<?php } ?>
+				
+				
 			<div class="uk-grid uk-grid-margin" uk-grid>
-				<div class=" uk-width-1-1 uk-width-2-3@m">
-					<form action="" method="POST"  class="uk-form-horizontal">
+				<div class=" uk-width-1-1 uk-width-2-3@l">
+					<form action="" method="POST"  class="uk-form-horizontal" enctype="multipart/form-data">
 						<div class="uk-margin">
 							<label class="uk-form-label">Titel</label>
 							<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_title" value="<?php echo $title; ?>" required></div>
+						</div>
+						<div class="uk-margin">
+							<label class="uk-form-label">Bild</label>
+							<div class="uk-form-controls uk-margin">
+								<?php if( !empty($image)){ ?>
+								<img src="../images/<?php echo $image; ?>" style="max-height:100px;" /><br><br>
+								<?php } ?>
+								<input class="" type="file" name="post_image" value="">
+							</div>
 						</div>
 						<div class="uk-margin">
 							<label class="uk-form-label">Status</label>
@@ -128,7 +214,7 @@ $additional_scripts[] = "<script>
 						
 						<div class="uk-margin">
 							<label class="uk-form-label">Estellungsdatum</label>
-							<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_created" placeholder="<?php echo strftime("%Y-%m-%d %H:%M:%S"); ?>" value=""></div>
+							<div class="uk-form-controls uk-margin"><input class="uk-input" type="text" name="post_created" placeholder="<?php echo strftime("%Y-%m-%d %H:%M:%S"); ?>" value="<?php echo $created; ?>"></div>
 						</div>
 						<div class="uk-margin">
 							<label class="uk-form-label">Autor</label>
@@ -155,14 +241,14 @@ $additional_scripts[] = "<script>
 							<label class="uk-form-label"> </label>
 							<div class="uk-form-controls uk-margin">
 								<input type="submit" class="uk-button uk-button-primary" value="speichern">
-								<a class="uk-button uk-button-default" href="index.php">zurück</a>
+								<a class="uk-button uk-button-default" href="blogposts.php">zurück</a>
 							</div>
 						</div>
 						
-						<input type="hidden" name="ID" value="">
+						<input type="hidden" name="ID" value="<?php echo $ID; ?>">
 					</form>
 				</div>
-				<div class=" uk-width-1-1 uk-width-1-3@m">
+				<div class=" uk-width-1-1 uk-width-1-3@l">
 					
 				</div>
 			</div>

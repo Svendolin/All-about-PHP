@@ -20,7 +20,7 @@ if( isset($_POST['username']) && isset($_POST['passwort']) ){
 	// stimmen die Daten aus POST mit den gespeicherten überein?
 	
 	// Nach Benutzer suchen, der den angegebenen Benutzernamen (Email) hat:
-	$query = "SELECT * FROM admins WHERE admin_email = '".$_POST['username']."'";
+	$query = "SELECT * FROM admin WHERE admin_email = '".$_POST['username']."'";
 	
 	// Befehl senden
 	$res = mysqli_query($connection, $query);

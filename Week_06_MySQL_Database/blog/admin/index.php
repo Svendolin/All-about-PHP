@@ -7,8 +7,12 @@ require_once('../library/session.functions.php'); // alle Session funktionen
 require_once('../library/html.functions.php'); // alle HTML funktionen
 
 session_init(); // initialisiert die Session
-sessioncheck(); // schüztt dieses Script vor Zurgriff ohne Login
-
+$isLoggedIn = sessioncheck(); // Verwaltet die Session (noch gültig?)
+if($isLoggedIn == false){ 
+	// schüztt dieses Script vor Zurgriff ohne Login
+	header("location: login.php"); 
+	exit;
+}
 $hasError = false;
 $errorMsg = array();
 

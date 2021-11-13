@@ -6,6 +6,7 @@ $session_laufzeit = SESSION_EXPIRY*60; // so lange zurück darf der session time
 
 if( isset( $_SESSION['isloggedin'] ) ){
 // prüfen, ob es eine Session mit isloggedin ($_SESSION['isloggedin']) gibt und den Timestamp von jetzt aus time() mit dem Wert aus $_SESSION['login_timestamp'] vergleichen
+	
 	if($_SESSION['isloggedin'] != true || $_SESSION['login_timestamp']+$session_laufzeit < time() ){
 		// wenn die Session nicht existiert oder der timestamp weiter zurückliegt als die erlaubte laufzeit (= kein Zugriff)...
 		
