@@ -1,4 +1,5 @@
 <?php
+// --- config
 // SQL Konfiguration
 define( 'DBSERVER', 'localhost' ); // in der Regel localhost, ausser der Server liegt nicht da wo das PHP SCript liegt
 define( 'DBUSER', 'root' ); 

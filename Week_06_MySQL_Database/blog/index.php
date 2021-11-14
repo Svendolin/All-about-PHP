@@ -1,8 +1,10 @@
 <?php
 
-require_once('includes/config.php'); // alle Konstanten für das Projekt
+// --- index.php = Startseite --- //
+
+require_once('includes/config.php');          // alle Konstanten für das Projekt
 // require_once('includes/sessioncheck.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
-require_once('includes/mysql-connect.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
+require_once('includes/mysql-connect.php');   // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
 
 
 // Daten auslesen
