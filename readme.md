@@ -75,7 +75,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-➡ *CREATE DATABASES - PHPMyAdmin (SQL FILE):*
+➡ ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
 
 
 
@@ -99,14 +99,14 @@ PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
    * TINYINT = (1 byte, 255 integer data) vs BIGINT (8 byte, Billions of integer data #) (*Numeric*)
    * TIMESTAMP = as well as the default with "current_time": Display the current time on every save. (*Dates*)
 The "default" is an additional possibility to influence the default value (e.g. as defined: 0 = false)
-* IMPORTANT: there are exact number data types that use integer data:
+* Important: there are exact number data types that use integer data:
 To save space in the database, use the smallest data type that can reliably contain all possible values. 
 For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
 However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
 
 <br />
 
-➡ *IMPORT DATABASES - PHPMyAdmin:*
+➡ **IMPORT SQL-CONTENT - PHPMyAdmin:**
 
 7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
@@ -115,13 +115,19 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
-➡ *EXPORT DATABASES - PHPMyAdmin (Usually used as a backup):*
+➡ **EXPORT SQL-CONTENT - PHPMyAdmin (Usually used as a backup):**
 
 8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
 <br />
 
-➡ *MENU BAR IN PHPMyAdmin shortly explained:* 
+➡ **DELETE DATABASE TABLE (warning: this will delete everything, table and all the content!)**
+
+* "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
+
+<br />
+
+➡ **MENU BAR IN PHPMyAdmin shortly explained:**
 * BROWSE = Overview
 * STRUCTURE = Column editing 
 * SQL = Data management
