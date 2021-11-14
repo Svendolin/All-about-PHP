@@ -1,6 +1,6 @@
 <?php
 
-// --- post.php = Seite, wenn Post angeklickt wird --- //
+// --- post.php = Seite, wenn ein spezifischer Post angeklickt wird --- //
 
 
 require_once('includes/config.php');          // alle Konstanten für das Projekt
@@ -67,7 +67,7 @@ require('scripts/commentform.php');
 			   <div class="uk-container">
 				  <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
 					 <div>
-						<h1 class="uk-text-right" data-id="page#0-0-0-0">        PHP Blog    </h1>
+						<h1 class="uk-text-right" data-id="page#0-0-0-0">PHP Blog</h1>
 					 </div>
 				  </div>
 			   </div>
@@ -98,7 +98,7 @@ require('scripts/commentform.php');
 					  <?php echo $post['post_longtext']; ?> 
 				   </div>
 				  
-					<?php include('includes/html/commentform.html.php'); ?> <!-- FUNKTIONIERT NICHT -->
+					<?php include('includes/html/commentform.html.php'); ?> 
 				</article>
 				<?php } ?>
 			</div>

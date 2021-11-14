@@ -1,4 +1,11 @@
-<?php if(isset($articleID) && $articleID>0){ ?>
+<?php 
+
+// --- commentform.php = Kommentarfunktion unter den Blogpost --- //
+
+if(isset($articleID) && $articleID>0){ 
+	
+	
+?>
 <div class="uk-card uk-card-primary uk-card-body">
 	<h4><i class="far fa-comment"></i> Sag uns was du denkst!</h4>
 	<p>
