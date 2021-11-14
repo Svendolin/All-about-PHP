@@ -35,7 +35,7 @@ What is PHP ?
 |:--------------| :--------------|
 | Week&nbsp;01 | direction , errortest , hello world , `include()` |
 | Week&nbsp;02 | `Schreibweisen PHP - 3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
-| Week&nbsp;03 | Reg-Formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week&nbsp;03 | Reg-F ormvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
 | Week&nbsp;06 | MySQL Database (blog) and (demo files) working with `MyPHPAdmin` MySQL Database |
@@ -140,7 +140,11 @@ However, tinyint would not suffice for the age of a building, since a building c
 * If a primary key column is marked with "AUTO_INCREMENT", then no value has to be set for this column when creating a row. The database system then "automatically sets a value" = *"Auto_Increment"* 
 
 * We can thus create several tables, for example *USERS*, and assign the **primary key** of this ID there. 
-The second table *ORDERS* also receives an ID, a **foreign key**. We can relate these to each other and query (ger: "auslesen") them from multible tables
+The second table *POSTS* also receives an ID, a **foreign key**. We can relate these to each other and query (ger: "auslesen") them from multiple tables:
+
+<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://i.ytimg.com/vi/Wtl-hQ2Dp1I/maxresdefault.jpg" />
+
+
 
 
 
@@ -157,25 +161,38 @@ What is SQL ?
 | Operation | Effect  | Demo File  | 
 |:--------------| :--------------| :--------------|
 | CREATE | Create Table Command | insert.php 
-|  | `INSERT INTO `` (``,``) VALUES ('{}', '{}') ` 
+|  | ```INSERT INTO `a` (`b`,`b`) VALUES ('{c}', '{c}') ``` 
 | UPDATE | Altering and changing content or structure of your table | edit.php 
-|  | `UPDATE `` SET ``= WHERE ``= ` |
+|  | ```UPDATE `a` SET `c`= WHERE `b`= `1` ``` |
 | DELETE | Delete Operations | delete.php
-|  | `DELETE FROM `` WHERE ``= ` |
+|  | ```DELETE FROM `a` WHERE `b`= `5` ``` |
 | READ | Retrieve and (re)-read the content of your table (*) | edit.php |
-|  | `SELECT ``,`` FROM `` WHERE `` = '' ` |
-|----| ---- | ---- |
+|  | ```SELECT `b`,`b` FROM `a` WHERE `c` ``` |
+|----| ------------------------------------------------------ | ---- |
 || Connection to server database | connect.php |
 || Overview of the added data content | liste.php |
 || Delete a specific post (#) | delete.php?id= |
 || Edit a specific post (#) | edit.php?id= |
+|| Delete a specific post (multiple functions in the script) | liste.php?delete= |
+|| Delete a specific post (multiple functions in the script) | form.php?edit= |
 
+<br />
+<br />
+
+**a: Table Names** => e.g. *comment , admin , blogpost*
+
+**b: Field Names** => e.g. *admin_name , admin_email , admin_pw*
+
+**c: Data** => e.g. *Svendolin , sven12@gmail. com , $post_category , comment_status=1*
+<br />
+<br />
+
+* The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
 * (*) *CUDR* instead of *CRUD* because you always OPERATE / MANIPULATE with "CDU" first and then (at the end) you "re-read" your changes to your table of your database with "R"!
 
 * (#) Each post will get its own ID: *"delete.php?id=4"* will delete the post with its ID=4 by pressing a delete button for example. Same thing for the edit button, you update and read this specific post for editing!
 
-* The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
 * "mysqli" is an improved object-oriented extension of PHP for accessing MySQL databases. 
 
