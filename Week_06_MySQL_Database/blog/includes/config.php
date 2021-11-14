@@ -1,5 +1,6 @@
 <?php
-// --- config
+// --- config.php = SQL Serverconfiguration zu PHPMyAdmin --- //
+
 // SQL Konfiguration
 define( 'DBSERVER', 'localhost' ); // in der Regel localhost, ausser der Server liegt nicht da wo das PHP SCript liegt
 define( 'DBUSER', 'root' ); 

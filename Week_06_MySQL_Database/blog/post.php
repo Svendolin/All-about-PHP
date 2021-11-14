@@ -1,8 +1,11 @@
 <?php
 
-require_once('includes/config.php'); // alle Konstanten für das Projekt
+// --- post.php = Seite, wenn Post angeklickt wird --- //
+
+
+require_once('includes/config.php');          // alle Konstanten für das Projekt
 // require_once('includes/sessioncheck.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
-require_once('includes/mysql-connect.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
+require_once('includes/mysql-connect.php');   // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
 
 if( empty($_GET['article']) ){
 	header("Location: index.php");
@@ -85,7 +88,7 @@ require('scripts/commentform.php');
 				<?php if( isset($post) && is_array($post) ) { ?>
 				<article id="article-2" class="uk-article" typeof="Article">
 					<?php if( !empty($post['post_image']) ) { ?>
-					<img src="<?php echo IMAGEFOLDER.'/'.$post['post_image'];?>" />
+					<img src="<?php echo IMAGEFOLDER.'/'.$post['post_image'];?>" /> <!-- FUNKTIONIERT NICHT -->
 					<?php } ?>
 				   <h1 property="headline" class="uk-margin-top uk-margin-remove-bottom uk-article-title">
 					  <?php echo $post['post_title']; ?>           
@@ -95,7 +98,7 @@ require('scripts/commentform.php');
 					  <?php echo $post['post_longtext']; ?> 
 				   </div>
 				  
-					<?php include(HTMLFOLDER.'/commentform.html.php'); ?>
+					<?php include('includes/html/commentform.html.php'); ?> <!-- FUNKTIONIERT NICHT -->
 				</article>
 				<?php } ?>
 			</div>

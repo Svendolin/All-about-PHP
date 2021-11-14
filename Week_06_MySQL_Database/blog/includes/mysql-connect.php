@@ -1,4 +1,5 @@
 <?php
+// --- mysql-connect.php = SQL Serverconfiguration zu PHPMyAdmin --- //
 
 // SQL Verbindung
 if( defined('DBSERVER') && defined('DBUSER') && defined('DBPASSWORT') && defined('DBNAME') ){
