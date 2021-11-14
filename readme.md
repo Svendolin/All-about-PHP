@@ -35,7 +35,7 @@ What is PHP ?
 |:--------------| :--------------|
 | Week&nbsp;01 | direction , errortest , hello world , `include()` |
 | Week&nbsp;02 | `Schreibweisen PHP - 3 Ways to integrate Arrays[]`  ,   `Associative and Mutlidimensional Arrays[]` ,  Blog Layout , include() folder |
-| Week&nbsp;03 | Reg-F ormvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
+| Week&nbsp;03 | Reg-Formvalidation with style and basic design , `$_get()` vs `$_post()` Request , `filter_var()` + `isset() vs empty()` + `implode() vs explode()` |
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
 | Week&nbsp;06 | MySQL Database (blog) and (demo files) working with `MyPHPAdmin` MySQL Database |
