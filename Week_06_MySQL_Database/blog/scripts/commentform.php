@@ -1,5 +1,7 @@
 <?php
-/* KOMMENTARE */
+/* KOMMENTARE - Commentform basierend auf PHP
+- Ohne Echos und Ausgaben, reiner Code */
+
 
 // Variablen erzeugen - index in POST sind nicht immer vorhanden, wir wollen "verlässliche" Variablen
 $hasError = false; // Statusvariable für Fehlerprüfung
