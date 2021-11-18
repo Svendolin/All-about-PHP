@@ -23,13 +23,14 @@ What is PHP ?
 ***
 ## Folder Directory
 ***
-1. [Week_01](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
-2. [Week_02](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
-3. [Week_03](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
-4. [Week_04](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
-5. [Week_05](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
-6. [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
-
+1. [Week_01 - Click this link to enter the corresponding folder of the week 01 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
+2. [Week_02 - Click this link to enter the corresponding folder of the week 02 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
+3. [Week_03 - Click this link to enter the corresponding folder of the week 03 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
+4. [Week_04 - Click this link to enter the corresponding folder of the week 04 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
+5. [Week_05 - Click this link to enter the corresponding folder of the week 05 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
+6. [Week_06 - Click this link to enter the corresponding folder of the week 06 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
+6. [Week_07 - Click this link to enter the corresponding folder of the week 07 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_07_TableRef/TableReferences%20%2B%20Beziehungen)
+6. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
 
 | Topic | Content  | 
 |:--------------| :--------------|
@@ -39,6 +40,8 @@ What is PHP ?
 | Week&nbsp;04 | login.php WITH protected area , login.php (hashed) WITH protected area , login.php WITHOUT protected area , login.php with timeout session , hashing encryption lab , session vs cookie |
 | Week&nbsp;05 |  `Structure (Front Controller)` , `Structure (Basic)` , `Structure (Basic) + Dynamic Navigation + Admin Area` |
 | Week&nbsp;06 | MySQL Database (Blog "Musteraufbau") , (demo files) working with `MyPHPAdmin` MySQL Database (CRUD Operations) |
+| Week&nbsp;07 | TableReferences 1:1 / 1:N / N:M |
+| Week&nbsp;08 | MySQLi `prepare()`-statement to make user inputs more secure against SQL-Injections
 
 <br />
 <br />
@@ -75,7 +78,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-🔵 ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):** (SCAU RASCH IM TXT NACH WEGEN ANDERER MéGLCIHKEIT)
+🔵 ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
 
 
 
@@ -108,11 +111,14 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 🟢 **IMPORT SQL-CONTENT - PHPMyAdmin:**
 
-7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
+* Check if you are on right folder for import! The centered folder structure at the top shows you where you are and additonally where you will import the SQL file!
+
+
+8. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
    * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
-   * WICHTIG: Never forget to create a valid database beforehand!
-   * ROOT ORDNER STRUKTUR ANSCHEUNEN
+   * Never forget to create a valid database before you import a SQL file
+   * SQL files cannot be overwritten. They can only be adjusted or completely deleted to integrate a new SQL file into the database
 
 <br />
 
@@ -126,6 +132,14 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 * "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
 * DROP TABLE `` = deletes the table of a database!
+
+<br />
+
+🟣 **JOIN TABLES**
+
+* (...)
+
+
 
 <br />
 <br />
