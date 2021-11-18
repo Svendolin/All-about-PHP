@@ -2,10 +2,9 @@
 
 // --- post.php = Seite, wenn ein spezifischer Post angeklickt wird --- //
 
-
-require_once('includes/config.php');          // alle Konstanten für das Projekt
+require_once('includes/config.php'); // alle Konstanten für das Projekt
 // require_once('includes/sessioncheck.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
-require_once('includes/mysql-connect.php');   // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
+require_once('includes/mysql-connect.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
 
 if( empty($_GET['article']) ){
 	header("Location: index.php");
@@ -13,6 +12,7 @@ if( empty($_GET['article']) ){
 
 
 $urlparts = explode(':', $_GET['article']);
+print_r($urlparts);
 $articleID = $urlparts[0];
 $articleAlias = $urlparts[1];
 if( (int)$articleID == 0 ){
@@ -22,8 +22,9 @@ if( (int)$articleID == 0 ){
 // Daten auslesen
 $query = "SELECT * FROM blogpost WHERE IDblogpost=".$articleID;
 $res = mysqli_query($connection, $query);
-$post = mysqli_fetch_assoc($res);
+$post = mysqli_fetch_assoc($res); // fetch_assoc liest nur jeweils einen Betrag aus, ideal für Blogpost / fetch_all macht eine Liste, ideal für Kommentare
 
+// TODO: kommentare auslesen
 
 
 require('scripts/commentform.php');
@@ -88,17 +89,21 @@ require('scripts/commentform.php');
 				<?php if( isset($post) && is_array($post) ) { ?>
 				<article id="article-2" class="uk-article" typeof="Article">
 					<?php if( !empty($post['post_image']) ) { ?>
-					<img src="<?php echo IMAGEFOLDER.'/'.$post['post_image'];?>" /> <!-- FUNKTIONIERT NICHT -->
+					<img src="<?php echo IMAGEFOLDER.'/'.$post['post_image'];?>" />
 					<?php } ?>
-				   <h1 property="headline" class="uk-margin-top uk-margin-remove-bottom uk-article-title">
+					<h1 property="headline" class="uk-margin-top uk-margin-remove-bottom uk-article-title">
 					  <?php echo $post['post_title']; ?>           
-				   </h1>
-				   <div  class="uk-margin-medium-top" property="text">
+					</h1>
+					<div  class="uk-margin-medium-top" property="text">
 					  <p><?php echo $post['post_shorttext']; ?> </p>
 					  <?php echo $post['post_longtext']; ?> 
-				   </div>
+					</div>
 				  
-					<?php include('includes/html/commentform.html.php'); ?> 
+					<?php // TODO: kommentare speichern: ?>
+					<?php include(HTMLFOLDER.'/commentform.html.php'); ?>
+
+					<?php // TODO: kommentare anzeigen: ?>
+					<?php include(HTMLFOLDER.'/comments.html.php'); ?>
 				</article>
 				<?php } ?>
 			</div>

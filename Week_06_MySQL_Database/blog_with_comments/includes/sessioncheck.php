@@ -1,5 +1,7 @@
 <?php
+
 // --- sessioncheck.php = Session Timeout generieren bei Inaktivität --- //
+
 
 session_name(CUSTOM_SESSIONNAME); // key meinEigenerSessionCookieKey statt PHPSESSID - vor session_start() und in einer App immer gleich (da sonst die Session nicht mehr gefunden wird)
 session_start(); // Session Zugriff starten / Array bereitstellen mit Session-Daten, wenn vorhanden
@@ -23,7 +25,7 @@ if( isset( $_SESSION['isloggedin'] ) ){
 	}
 }else {
 	header('Location: login.php');
-	exit;// Tipp: das Script darf im Fall, dass kein Zugriff besteht, nicht weiterlaufen, hierfür sollte exit() oder die() verwendet werden
+	exit;// Tipp: das Script darf im Fall, dass kein Zugriff besteht, nciht weiterlaufen, hierfür sollte exit() oder die() verwendet werden
 }
 
 session_regenerate_id(); // neue ID für meine Session - hacker kann die alte nun nicht mehr brauchen, falls er sie hat.

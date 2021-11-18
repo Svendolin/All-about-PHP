@@ -102,14 +102,33 @@ if( isset($_POST['post_title']) && isset($_POST['post_created']) && isset($_POST
 	if(!$hasError){
 		
 		// Speichern der Daten in die Datenbank
-		if( empty($ID) ){ // Neu
+		if( empty($ID) ){ // Neu und bestehende
 			$addImageField = empty($newImage)? "":", post_image"; // Zusatz für Bild, nur wenn Bild hochgeladen wurde
-			$addImageValue = empty($newImage)? "":", '{$newImage}'"; // Zusatz für Bild, nur wenn Bild hochgeladen wurde
+			$addImageValue = empty($newImage)? "":", ?"; // Zusatz für Bild, nur wenn Bild hochgeladen wurde
 			
 			$query = "INSERT INTO blogpost (post_title, post_state, post_created, post_author, post_category, post_shorttext, post_longtext {$addImageField})
-			VALUES ('".$title."', '".$state."', '".$created."', '".$author."', '".$category."', '".$shorttext."', '".$text."' {$addImageValue}) ";
+			VALUES 
+			(?, ?, ?, ?, ?, ?, ? {$addImageValue})";
+			
+			$res = mysqli_prepare($connection, $query); // den Server auf den auszuführenden Befehl vorbereiten (ohne Daten)
+      
+			if(empty($newImage)) {
+			// Falls ohne Bild:
+				mysqli_stmt_bind_param($res,'sssssss', $title, $state, $created, $author, $category, $shorttext, $text); // dem Server die Daten zuspielen
+			} else{
+			// Falls mit Bild:
+				mysqli_stmt_bind_param($res,'ssssssss', $title, $state, $created, $author, $category, $shorttext, $text, $_newImage); // dem Server die Daten zuspielen
+			}
+      	mysqli_stmt_execute($res); // Befehl mit den geschickten Daten ausführen
+      	$result = mysqli_stmt_get_result($res); // Resultat Objekt "abholen"
+			
+			
+			// Befehl abschicken und prüfen...
+			// $res = mysqli_query($connection, $query);
+			$newID = mysqli_insert_id($connection);
 
-		}else{ // bearbeiten
+
+		} else{ // bearbeiten
 			$query = "UPDATE `blogpost` 
 			SET 
 			`post_title` = '{$title}',
@@ -126,6 +145,7 @@ if( isset($_POST['post_title']) && isset($_POST['post_created']) && isset($_POST
 				`post_image` = '{$newImage}'";
 			}
 			$query .= " WHERE `IDBlogpost` = {$ID}";
+			$res = mysqli_query($connection, $query);
 		}
 		// die($query);
 		
@@ -134,8 +154,8 @@ if( isset($_POST['post_title']) && isset($_POST['post_created']) && isset($_POST
 		}
 		
 		// Befehl abschicken und prüfen...
-		$res = mysqli_query($connection, $query);
-		$newID = mysqli_insert_id($connection);
+		// $res = mysqli_query($connection, $query);
+		// $newID = mysqli_insert_id($connection);
 		
 		if( !$res ){
 			$hasError = true;

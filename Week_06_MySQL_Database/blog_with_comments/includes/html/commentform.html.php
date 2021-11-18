@@ -1,5 +1,6 @@
-<!-- /* KOMMENTARE - Commentform basierend auf HTML 
+<!-- /* KOMMENTARFORMULAR (Ausgelagert im HTML) - Commentform basierend auf HTML 
 (Mit echos und Stuff) */-->
+
 
 
 <?php if(isset($articleID) && $articleID>0){ ?>
@@ -26,7 +27,10 @@
 		// alle einträge im Error Array als String ausgeben
 		echo implode('<br>', $errorMessages); // flatten array, umkehrbar mit explode()
 		?>
-	</div>
+	
+
+
+</div>
 	<?php } ?>
 	<form method="POST" action="">
 		<div class="uk-grid uk-grid-margin uk-child-width-1-2@m">

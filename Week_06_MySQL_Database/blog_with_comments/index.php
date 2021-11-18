@@ -1,9 +1,10 @@
 <?php
+
 // --- index.php = Startseite (ÜBERSICHT) --- //
 
-require_once('includes/config.php');          // alle Konstanten für das Projekt
+require_once('includes/config.php'); // alle Konstanten für das Projekt
 // require_once('includes/sessioncheck.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
-require_once('includes/mysql-connect.php');   // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
+require_once('includes/mysql-connect.php'); // Sessioncheck zum schutz des Admintools vor unerlaubtem Zugriff
 
 
 // Daten auslesen
@@ -20,6 +21,7 @@ $daten = mysqli_fetch_all($res, MYSQLI_ASSOC);
       <meta charset="utf-8">
       <meta name="author" content="Terry Harker">
       <title>PHP Blog</title>
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
       <link href="theme/css/fontawesome.min.css?2.6.0" rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" />
       <link href="theme/css/theme.12.css" rel="stylesheet" id="theme-style" />
       <script src="theme/js/uikit/uikit.min.js?2.6.0"></script>
@@ -50,7 +52,7 @@ $daten = mysqli_fetch_all($res, MYSQLI_ASSOC);
                <div class="uk-container">
                   <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
                      <div>
-                        <h1 class="uk-text-right" data-id="page#0-0-0-0">        PHP Blog    </h1>
+                        <h1 class="uk-text-right" data-id="page#0-0-0-0">PHP Blog</h1>
                      </div>
                   </div>
                </div>

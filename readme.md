@@ -75,7 +75,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-➡ ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
+🔵 ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):** (SCAU RASCH IM TXT NACH WEGEN ANDERER MéGLCIHKEIT)
 
 
 
@@ -106,28 +106,32 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
-➡ **IMPORT SQL-CONTENT - PHPMyAdmin:**
+🟢 **IMPORT SQL-CONTENT - PHPMyAdmin:**
 
 7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
    * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
-   * Never forget to create a valid database beforehand!
+   * WICHTIG: Never forget to create a valid database beforehand!
+   * ROOT ORDNER STRUKTUR ANSCHEUNEN
 
 <br />
 
-➡ **EXPORT SQL-CONTENT - PHPMyAdmin (Usually used as a backup):**
+🟡 **EXPORT SQL-CONTENT - PHPMyAdmin (Usually used as a backup):**
 
 8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
 
 <br />
 
-➡ **DELETE DATABASE TABLE (warning: this will delete everything, table and all the content!)**
+🔴 **DELETE DATABASE / TABLE (warning: this will delete everything, table and all the content!)**
 
 * "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
+* DROP TABLE `` = deletes the table of a database!
 
 <br />
+<br />
+<br />
 
-➡ **MENU BAR IN PHPMyAdmin shortly explained:**
+**MENU BAR IN PHPMyAdmin shortly explained:**
 * BROWSE = Overview
 * STRUCTURE = Column editing 
 * SQL = Data management
