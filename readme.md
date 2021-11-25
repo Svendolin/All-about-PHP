@@ -198,7 +198,7 @@ What is SQL ?
 || Delete a specific post (#) | delete.php?id= |
 || Edit a specific post (#) | edit.php?id= |
 || Delete a specific post (multiple functions in the script) | liste.php?delete= |
-|| Delete a specific post (multiple functions in the script) | form.php?edit= |
+|| Edit a specific post (multiple functions in the script) | form.php?edit= |
 
 <br />
 <br />
