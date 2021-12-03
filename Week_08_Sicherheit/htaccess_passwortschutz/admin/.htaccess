@@ -1,0 +1,6 @@
+
+AuthName "admin"
+AuthType Basic
+AuthUserFile  C:/xampp/htdocs/Week_08_Sicherheit/htaccess_passwortschutz/admin/.htpasswd
+require valid-user
+

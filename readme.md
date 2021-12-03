@@ -42,6 +42,7 @@ What is PHP ?
 | Week&nbsp;06 | MySQL Database (Blog "Musteraufbau") , (demo files) working with `MyPHPAdmin` MySQL Database (CRUD Operations) |
 | Week&nbsp;07 | TableReferences 1:1 / 1:N / N:M |
 | Week&nbsp;08 | MySQLi `prepare()`-statement to make user inputs more secure against SQL-Injections
+| Week&nbsp;09 | "All in One"-File with:
 
 <br />
 <br />

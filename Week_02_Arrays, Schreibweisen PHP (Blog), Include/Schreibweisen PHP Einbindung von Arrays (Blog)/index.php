@@ -15,18 +15,18 @@ Siehe unten beim Output: 3 Varianten der Schreibweise, alle haben das selbe Resu
 // --- Wiederholende Inhalte in zusammenfassen in Array (Nützlich für Übertexte oder z.B Mitarbeiterauflistung etc)
 $blogContent = array( 
 	 array( 
-		'titel'=>'Terrys Blogeintrag', 
+		'titel'=>'*Erster* Blogeintrag aus dem Array', 
 		'datum'=>'2021-09-23', 
 		'autor'=>'Terry', 
 		'kategorie'=>'PHP Blog', 
-		'text'=>'Mein Text im Blogeintrag' 
+		'text'=>'Eintrag Nummer 1' 
 	),
 	 array( 
-		'titel'=>'PHP News', 
+		'titel'=>'+Zweiter+ Blogeintrag aus dem Array', 
 		'datum'=>'2021-09-21', 
 		'autor'=>'Terry', 
 		'kategorie'=>'PHP Blog', 
-		'text'=>'asdlfkjadsölfkj sadlfkj adslökfj adsölfkjadsöflk' 
+		'text'=>'Eintrag Nummer 2' 
 	)
 
 );
@@ -69,7 +69,7 @@ $blogContent = array(
                <div class="uk-container">
                   <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
                      <div>
-                        <h1 class="uk-text-right" data-id="page#0-0-0-0">        PHP Blog    </h1>
+                        <h1 class="uk-text-right" data-id="page#0-0-0-0">PHP Blog</h1>
                      </div>
                   </div>
                </div>
@@ -96,7 +96,11 @@ $blogContent = array(
                                  <div class="uk-margin-top"><a href="post.php?article=10:der-erste-tag-im-php-kurs" class="el-link uk-button uk-button-default">Lesen</a></div>
                               </div>
                            </div>';
-							} ?>																	
+							} ?>	
+                           <!--x-- Ziel: Eintrag 1 und Eintrag 2 werden angezeigt --X--> 
+                     
+
+
 							      <!-- ------- Möglichkeit 2 ------ : --> 
 							<?php // Möglichkeit 2: loop mit Klammern, dazwischen PHP beenden und HTML hineinschreiben: ?>															
 							<?php foreach($blogContent as $post) { ?> <!-- (PLURAL as SINGULAR) -->
@@ -111,7 +115,11 @@ $blogContent = array(
                               </div>
                            </div>
 						   <?php } ?>
-						   
+                           <!--x-- Ziel: Eintrag 1 und Eintrag 2 werden angezeigt --x--> 
+
+
+
+
 							<?php 
 							/*
 							* ------- Möglichkeit 3 ------ : 
@@ -131,6 +139,8 @@ $blogContent = array(
                               </div>
                            </div>
 						   <?php endforeach; ?>	
+                            <!--x-- Ziel: Eintrag 1 und Eintrag 2 werden angezeigt --x--> 
+                            <!--x-- Somit werden beide Blogeinträge jeweils 3 Mal angezeigt :D --x--> 
 						
                         </div>
                      </div>
