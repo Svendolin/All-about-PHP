@@ -131,8 +131,8 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 🔴 **DELETE DATABASE / TABLE (warning: this will delete everything, table and all the content!)**
 
-* "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
-* DROP TABLE `` = deletes the table of a database!
+* DATABASE: "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
+* TABLE: DROP TABLE `` = deletes the table of a database!
 
 <br />
 
@@ -199,7 +199,7 @@ What is SQL ?
 || Delete a specific post (#) | delete.php?id= |
 || Edit a specific post (#) | edit.php?id= |
 || Delete a specific post (multiple functions in the script) | liste.php?delete= |
-|| Delete a specific post (multiple functions in the script) | form.php?edit= |
+|| Edit a specific post (multiple functions in the script) | form.php?edit= |
 
 <br />
 <br />
