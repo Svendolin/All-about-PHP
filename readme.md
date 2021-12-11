@@ -23,14 +23,7 @@ What is PHP ?
 ***
 ## Folder Directory
 ***
-1. [Week_01 - Click this link to enter the corresponding folder of the week 01 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
-2. [Week_02 - Click this link to enter the corresponding folder of the week 02 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
-3. [Week_03 - Click this link to enter the corresponding folder of the week 03 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
-4. [Week_04 - Click this link to enter the corresponding folder of the week 04 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
-5. [Week_05 - Click this link to enter the corresponding folder of the week 05 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
-6. [Week_06 - Click this link to enter the corresponding folder of the week 06 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
-6. [Week_07 - Click this link to enter the corresponding folder of the week 07 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_07_TableRef/TableReferences%20%2B%20Beziehungen)
-6. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+
 
 | Topic | Content  | 
 |:--------------| :--------------|
@@ -42,7 +35,23 @@ What is PHP ?
 | Week&nbsp;06 | MySQL Database (Blog "Musteraufbau") , (demo files) working with `MyPHPAdmin` MySQL Database (CRUD Operations) |
 | Week&nbsp;07 | TableReferences 1:1 / 1:N / N:M |
 | Week&nbsp;08 | MySQLi `prepare()`-statement to make user inputs more secure against SQL-Injections
-| Week&nbsp;09 | "All in One"-File with:
+| Week&nbsp;09 | "All in One"-File with: `Registration and Login with MySQL Database management`
+| Week&nbsp;10 | `Image Upload` Basic Variant
+| Week&nbsp;11 | `Image Upload` Advanced Variant
+| Week&nbsp;12 | `CKEditor` for < textareas >
+
+1. [Week_01 - Click this link to enter the corresponding folder of the week 01 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
+2. [Week_02 - Click this link to enter the corresponding folder of the week 02 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
+3. [Week_03 - Click this link to enter the corresponding folder of the week 03 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
+4. [Week_04 - Click this link to enter the corresponding folder of the week 04 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
+5. [Week_05 - Click this link to enter the corresponding folder of the week 05 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
+6. [Week_06 - Click this link to enter the corresponding folder of the week 06 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
+7. [Week_07 - Click this link to enter the corresponding folder of the week 07 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_07_TableRef/TableReferences%20%2B%20Beziehungen)
+8. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+8. [Week_09 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+8. [Week_10 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+8. [Week_11 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+8. [Week_12 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
 
 <br />
 <br />
@@ -115,7 +124,7 @@ However, tinyint would not suffice for the age of a building, since a building c
 * Check if you are on right folder for import! The centered folder structure at the top shows you where you are and additonally where you will import the SQL file!
 
 
-8. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
+7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
    * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
    * Never forget to create a valid database before you import a SQL file
@@ -131,14 +140,15 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 🔴 **DELETE DATABASE / TABLE (warning: this will delete everything, table and all the content!)**
 
-* DATABASE: "SQL" > Write in the SQL field: DROP DATABASE `` ; (Be sure to add the table name in the '  ' signs!)
-* TABLE: DROP TABLE `` = deletes the table of a database!
+* To delete the DATABASE at "SQL", write in the SQL field => DROP DATABASE `` ; (Be sure to add the database name in the '  ' signs!)
+* To delete the TABLE at "SQL", write in the SQL field => DROP TABLE `` ; (Be sure to add the table name in the '  ' signs!)
+
 
 <br />
 
 🟣 **JOIN TABLES**
 
-* (...)
+* A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
 
 
 
@@ -250,12 +260,11 @@ Then it is because you forgot to close a } or ) somewhere. Probably because you 
 * If you get an error in the script when you hash the password, then it is because you decided not to follow my steps exactly in the video when I created the database table. Make sure you DON'T set the varchar() to a lower value! When you hash the password it will take up a lot of space in this column, and if you set a lower number then it won't fit!
 
 **▸"signup=success but database is empty?"**
-* Here there might be a few reasons for your error. 1st is that you made a syntax/spelling mistake in your code. And yes you will claim that your code is identical to mine, but in 90% of the cases people claim this, I still find a syntax error in their code. So check your code for errors!
-2nd reason is that MAMP seems to cause a lot of issues for people. Therefore try using XAMPP and make sure you write the same as me in the dbh.inc.php file.
-3nd reason might be because you didn't follow the tutorial 100% when we set up the database at the beginning.
+* Here there might be a few reasons for your error. 1st is that you made a syntax/spelling mistake in your code.
+2nd reason is that MAMP seems to cause a lot of issues for people. Therefore try using XAMPP and make sure you write the same as me in the .php file.
 
 **▸"HTTP ERROR 500"**
-* HTTP ERROR 500 is a server error, meaning that you are most likely using an outdated version of apache or mysql. Try updating your servers and make sure that you are using the latest version of PHP.
+* HTTP ERROR 500 is a server error, meaning that you are most likely using an outdated version of apache or mysql (or in case you've forgot to start your apache and mysql server). Try updating your servers and make sure that you are using the latest version of PHP.
 
 
 <br />
