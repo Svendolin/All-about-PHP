@@ -47,11 +47,11 @@ What is PHP ?
 5. [Week_05 - Click this link to enter the corresponding folder of the week 05 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
 6. [Week_06 - Click this link to enter the corresponding folder of the week 06 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 7. [Week_07 - Click this link to enter the corresponding folder of the week 07 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_07_TableRef/TableReferences%20%2B%20Beziehungen)
-8. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
-8. [Week_09 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
-8. [Week_10 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
-8. [Week_11 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
-8. [Week_12 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit/MySQLi_prepare())
+8. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit)
+8. [Week_09 - Click this link to enter the corresponding folder of the week 09 - Provided with German comments]()
+8. [Week_10 - Click this link to enter the corresponding folder of the week 10 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_10_Dateiupload%20(Basic))
+8. [Week_11 - Click this link to enter the corresponding folder of the week 11 - Provided with German comments]()
+8. [Week_12 - Click this link to enter the corresponding folder of the week 12 - Provided with German comments]()
 
 <br />
 <br />
