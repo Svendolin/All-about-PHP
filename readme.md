@@ -229,6 +229,39 @@ What is SQL ?
 <br />
 
 ***
+## Errors ❌
+***
+Here is a short list of errors I had while I was writing PHP. If some of these errors may appear...well...now you know what the problem is and how you can fix it (hopefully)
+
+**▸"signup=empty"**
+* Make sure you wrote "mysqli_connect" and NOT "mysql_connect" in the .php file!
+
+**▸"unexpected }"**
+* If you get this error message:
+Parse error: syntax error, unexpected '}'
+Then it is because you forgot to close a ) or ; somewhere.
+
+**▸"unexpected ;"**
+* If you get this error message:
+Parse error: syntax error, unexpected ';'
+Then it is because you forgot to close a } or ) somewhere. Probably because you made a mistake with your parenthesis near the "empty()" functions in your signup script.
+
+**▸"hashed pwd error"**
+* If you get an error in the script when you hash the password, then it is because you decided not to follow my steps exactly in the video when I created the database table. Make sure you DON'T set the varchar() to a lower value! When you hash the password it will take up a lot of space in this column, and if you set a lower number then it won't fit!
+
+**▸"signup=success but database is empty?"**
+* Here there might be a few reasons for your error. 1st is that you made a syntax/spelling mistake in your code. And yes you will claim that your code is identical to mine, but in 90% of the cases people claim this, I still find a syntax error in their code. So check your code for errors!
+2nd reason is that MAMP seems to cause a lot of issues for people. Therefore try using XAMPP and make sure you write the same as me in the dbh.inc.php file.
+3nd reason might be because you didn't follow the tutorial 100% when we set up the database at the beginning.
+
+**▸"HTTP ERROR 500"**
+* HTTP ERROR 500 is a server error, meaning that you are most likely using an outdated version of apache or mysql. Try updating your servers and make sure that you are using the latest version of PHP.
+
+
+<br />
+<br />
+
+***
 ## Collaboration ✅
 ***
 > Feel free to contact me if you've seen something wrong, found some errors or struggled on some mistakes! Always happy to have a clean sheet here! :)
