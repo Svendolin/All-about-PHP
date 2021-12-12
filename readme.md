@@ -88,7 +88,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-🔵 ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
+🔵 ***CREATE DATABASE + TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
 
 
 
