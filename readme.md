@@ -108,16 +108,18 @@ PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
 
 🔵 **CREATE TABLE** (contains all the data):
 
-4.1 Option 1: Create a table by clicking the SQL field and use your SQL skills such as this example here:
+4.1 Option 1: Create a table (make sure that you are in the database folder) by clicking the SQL field and use your SQL skills such as this example here:
+```
 CREATE TABLE users (
     usersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
     usersName varchar(128) NOT NULL,
     usersEmail varchar(128) NOT NULL,
     usersUid varchar(128) NOT NULL,
     usersPwd varchar(128) NOT NULL 
-);
+); 
+```
 
-4.2 "Create Table" > Select name column with appropriate labels for your project
+4.2 Option 2: "Create Table" (erzeuge Tabelle) > Select name column with appropriate labels for your project:
 5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
 6. Add the suitable DATATYPES, here is a very short overview:
    * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name (*String based*)
