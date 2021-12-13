@@ -88,8 +88,7 @@ XAMPP - USEFUL STEPS:
 ***
 ## MySQL and PHPMyAdmin - Useful Assistance ✅
 ***
-🔵 ***CREATE DATABASE TABLE + CONTENT - PHPMyAdmin (SQL FILE):**
-
+🔵 **CREATE DATABASE** in PHPMyAdmin:
 
 
 PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
@@ -102,7 +101,23 @@ PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
      * The file path is shown above (...)>(...)>(...)
      * Path overview for selections is also displayed on the left in a tree diagram
      * TIP: Use "right klick" on the desired subpage in the navigation on the left and open in new tab to work faster and cleaner
-4. "Create Table" > Select name column with appropriate labels for your project
+<br />
+<br />
+
+
+
+🔵 **CREATE TABLE** (contains all the data):
+
+4.1 Option 1: Create a table by clicking the SQL field and use your SQL skills such as this example here:
+CREATE TABLE users (
+    usersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    usersName varchar(128) NOT NULL,
+    usersEmail varchar(128) NOT NULL,
+    usersUid varchar(128) NOT NULL,
+    usersPwd varchar(128) NOT NULL 
+);
+
+4.2 "Create Table" > Select name column with appropriate labels for your project
 5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
 6. Add the suitable DATATYPES, here is a very short overview:
    * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name (*String based*)
