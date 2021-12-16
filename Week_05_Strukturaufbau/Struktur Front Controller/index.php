@@ -36,7 +36,7 @@ if( file_exists('scripts/'.$seite.'.php') ){ // oder is_file (weitere Variante)
 
 		<!--- INCLUDE 404-ERROR --->
 		<?php
-		if( file_exists('pages/'.$seite.'.php') ){ // oder is_file
+		if(file_exists('pages/'.$seite.'.php') ){ // oder is_file
 			include("pages/{$seite}.php"); // andere Schreibweise, Strings und vars zusammenzusetzen. Dabei wichtig: NUR "" verwenden. Deshalb andere Schreibweise empfohlen
 		}else{
 			// 404

@@ -137,7 +137,7 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
-🟡 **RENAME DATABASE** in PHPMyAdmin:
+🟠 **RENAME DATABASE** in PHPMyAdmin:
 
 
 PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool

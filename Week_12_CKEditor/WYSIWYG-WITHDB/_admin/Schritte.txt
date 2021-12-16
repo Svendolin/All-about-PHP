@@ -1,0 +1,72 @@
+Schritte CKeditor
+
+Website besuchen:
+Hinweise Unterschiede 4 und 5, bzw. dass es zwei verschiedene Versionen gibt.
+
+ev. auch Pricing anschauen (falls Zeit)
+
+WICHTIG!!!
+> bitte nicht als CDN-Version installieren, weil das Internet an der SAE manchmal instabil ist
+(würde ev. Arbeit während dem Unterricht verunmöglichen)
+"Content Delivery Network"
+oder auch "Content Distribution Network"
+
+> Arbeit mit Version 4 (einfacher als Einstieg ins Thema)
+
+Herunterladen ist grundsätzlich möglich:
+entweder als "Packages" oder Zusammenstellen mit dem Online "Builder"
+
+> Arbeit mit Package
+Es gibt eine Vergleichstabelle für die Features der Packages
+https://ckeditor.com/cke4/presets
+
+Weil es im "Basic Package" kein "Source Plugin" hat, arbeiten wir mit dem
+(Hinweisen, dass das ermöglicht dem Kunde zu helfen)
+> "Standard Package"
+Download als zip, darauf Beispiels-Seite anschauen
+
+Eigene Seite aufbauen
+Getting Started / Quick Start Guide / Adding CKEditor to Your Page
+> Hier hat es ein Grundgerüst für das HTML einer Seite.
+
+Neues Dokument anlegen, Pfad auf JS anpassen
+
+Ersetzen der init-Zeile
+
+CKEDITOR.replace( 'editor1', {
+    language: 'de',
+    uiColor: '#9AB8F3'
+});
+
+CKEditor versucht, die Sprache aus den Browsereinstellung zu nehmen, trotzdem empfiehlt es sich,
+die Sprache zu definieren
+
+Gebrauch des Config-Files:
+
+Ursprüngliches Dokument kopieren und nicht mehr anrühren, aus verschiedenen Gründen
+
+CKEDITOR.replace( 'editor1', {
+    // Falsch customConfig: 'ckeditor-4/MyConfig.js'
+    // Richtig:
+    customConfig: 'MyConfig.js'
+    
+});
+
+Ausprobieren, was man dort machen kann.
+Darauf auf Beispielsseite den "Toolbar Configurator" ausprobieren.
+
+Schreiben in DB
+Tutorial:
+https://makitweb.com/integrate-ckeditor-to-html-page-and-save-to-mysql-with-php/
+
+Umsetzen gem. Anleitung
+Erstellen DB/Tabelle SQL ist in Tutorial enthalten
+Achtung: das Umleiten auf ein Index ist verwirrend!!!
+header('location: index.php');
+> Anders lösen!!!!
+
+Ergänzen einer Seite, die in der DB liest
+
+
+
+

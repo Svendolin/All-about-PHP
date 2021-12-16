@@ -9,7 +9,7 @@ require_once('../library/html.functions.php'); // alle HTML funktionen
 session_init(); // initialisiert die Session
 $isLoggedIn = sessioncheck(); // Verwaltet die Session (noch gültig?)
 if($isLoggedIn == false){ 
-	// schüztt dieses Script vor Zurgriff ohne Login
+	// schüzt dieses Script vor Zurgriff ohne Login
 	header("location: login.php"); 
 	exit;
 }
