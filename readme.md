@@ -93,7 +93,7 @@ XAMPP - USEFUL STEPS:
 
 PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
 
-(side note: if you work on different computers, be sure to follow step 1. to 6. for the very first time! Then start with step 1. to 2. on your second computer while giving the database the identical name! At the end: Import your SQL-File, step 7., which you've created at the very beginning)
+
 
 1. Open MyPhpAdmin within your URL window: `http://localhost/phpmyadmin/` . Now you can create and structurize databases!
 2. "Databases" > "Create New Database" (give server a command where to fetch data) > "select default charset" > "utf8-unicode-ci" > "Create"
@@ -108,7 +108,7 @@ PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
 
 🔵 **CREATE TABLE** (contains all the data):
 
-4.1 Option 1: Create a table (make sure that you are in the database folder) by clicking the SQL field and use your SQL skills such as this example here:
+1.1 (Option 1): Create a table (make sure that you are in the database folder) by clicking the SQL field and use your SQL skills such as this example here:
 ```
 CREATE TABLE users (
     usersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -119,9 +119,10 @@ CREATE TABLE users (
 ); 
 ```
 
-4.2 Option 2: "Create Table" (erzeuge Tabelle) > Select name column with appropriate labels for your project:
-5. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
-6. Add the suitable DATATYPES, here is a very short overview:
+1.2 (Option 2): "Create Table" (erzeuge Tabelle) > Select name column with appropriate labels for your project:
+
+2. A_I (AUTO INCREMENT) = "Incrementing itself" > Click on the first field of "IDcomment" = It becomes Primary (it receives a PRIMARY KEY)
+3. Add the suitable DATATYPES, here is a very short overview:
    * VARCHAR is variable character limit. You should enter this, e.g. maximum 100 characters for the name (*String based*)
    * TEXT = Write a lot of text without restriction. (*String based*)
    * BOOLEAN = True or False as confirmation 
@@ -129,11 +130,45 @@ CREATE TABLE users (
    * TINYINT = (1 byte, 255 integer data) vs BIGINT (8 byte, Billions of integer data #) (*Numeric*)
    * TIMESTAMP = as well as the default with "current_time": Display the current time on every save. (*Dates*)
 The "default" is an additional possibility to influence the default value (e.g. as defined: 0 = false)
-* Important: there are exact number data types that use integer data:
+* IMPORTANT: there are exact number data types that use integer data:
 To save space in the database, use the smallest data type that can reliably contain all possible values. 
 For example, TINYINT would suffice for the age of a person, since no one can live more than 255 years. 
 However, tinyint would not suffice for the age of a building, since a building can be more than 255 years old.
 
+<br />
+
+🟡 **RENAME DATABASE** in PHPMyAdmin:
+
+
+PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
+
+
+
+1. click on your database which you want to rename > "Operationen"
+2. Scroll down to: "Datenbank umbenennen in"
+3. Rename it and confirm with "OK"
+4. IMPORTANT: Don't forget to rename your $dbname in your PHP-File as well if you have worked with VSC. This guarantees a perfect connection from VSC to your database at PHPMyADmin
+<br />
+<br />
+
+🔵 **CREATE ADDITIONAL TABLES** in PHPMyAdmin:
+
+
+
+
+1.1 (Variant 1): Open the database on the navigator on the left > Click ``"Neu"`` to ADD ANOTHER TABLE + FIELDS to your chosen database
+
+1.2.(Variant 2): Open the database on the navigator on the left > Select ``"Struktur"`` from above > ``"Erzeuge Tablle"`` > Chose the amout of columns you want at ``Anzahl der Spalten`` and fill in the fields.
+
+<br />
+
+🔵 **CREATE ADDITIONAL FIELDS** in PHPMyAdmin:
+
+
+Did you forgot an additional row of your table inside your database? Or did you get the request from your boss to add a further field subsequently? 
+
+1. Open the database on the navigator on the left > Click on your table inside the database > Select ``"Struktur"`` from above > Right above the "Indizes"-section: choose the amout of columns and the place where it should be added in your table (above which field of your table) > "OK"
+<br />
 <br />
 
 🟢 **IMPORT SQL-CONTENT - PHPMyAdmin:**
@@ -141,7 +176,7 @@ However, tinyint would not suffice for the age of a building, since a building c
 * Check if you are on right folder for import! The centered folder structure at the top shows you where you are and additonally where you will import the SQL file!
 
 
-7. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
+1. "Import" > Select File (SQL format = perfect) - If you choose .sql file: select "SQL" > OK 
    
    * Successful Safe: all boxes must be green, otherwhise you'll receive an error 
    * Never forget to create a valid database before you import a SQL file
@@ -151,7 +186,12 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 🟡 **EXPORT SQL-CONTENT - PHPMyAdmin (Usually used as a backup):**
 
-8. "Export" > (Export selected pieces) as a Backup for safety > "OK"
+1. "Export" > (Export selected pieces) as a Backup for safety:
+ * Exportmethod "angepasst" for more options:
+ * "Objekterstellungsoptionen" = "Create Table" should be checked
+ * "Datenerstellungsoptionen" = "TRUNCATE" = doesnt have to be checked (proves files of existance)
+ * "Ausgabe" = "Safe data as file" should be checked as well
+ 2. "OK" to export as an SQL
 
 <br />
 
