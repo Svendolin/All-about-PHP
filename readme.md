@@ -253,13 +253,13 @@ What is SQL ?
 | Operation | Effect  | Demo File  | 
 |:--------------| :--------------| :--------------|
 | CREATE | Create Table Command | insert.php 
-|  | ```INSERT INTO `a` (`b`,`b`) VALUES ('{c}', '{c}') ``` 
+|  | ```"INSERT INTO persons (familyname, firstname, place) VALUES ('peter', 'muster', 'mustertown')"; ``` 
 | UPDATE | Altering and changing content or structure of your table | edit.php 
-|  | ```UPDATE `a` SET `c`= WHERE `b`= `1` ``` |
+|  | ```"UPDATE persons SET familyname=`bohlen`, firstname=`dieter` WHERE id=201"; ``` |
 | DELETE | Delete Operations | delete.php
-|  | ```DELETE FROM `a` WHERE `b`= `5` ``` |
+|  | ```"DELETE FROM persons WHERE id=201"; ``` |
 | READ | Retrieve and (re)-read the content of your table (*) | edit.php |
-|  | ```SELECT `b`,`b` FROM `a` WHERE `c` ``` |
+|  | ```"SELECT * FROM persons WHERE familyname=`balboa` AND firstname= `rocky`"; ``` |
 |----| ------------------------------------------------------ | ---- |
 || Connection to server database | connect.php |
 || Overview of the added data content | liste.php |
@@ -271,13 +271,6 @@ What is SQL ?
 <br />
 <br />
 
-**a: Table Names** => e.g. *comment , admin , blogpost*
-
-**b: Field Names** => e.g. *admin_name , admin_email , admin_pw*
-
-**c: Data** => e.g. *Svendolin , sven12@gmail. com , $post_category , comment_status=1*
-<br />
-<br />
 
 * The Demo Files are placed at [Week_06](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
 
