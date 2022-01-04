@@ -316,6 +316,10 @@ Then it is because you forgot to close a } or ) somewhere. Probably because you 
 **▸"HTTP ERROR 500"**
 * HTTP ERROR 500 is a server error, meaning that you are most likely using an outdated version of apache or mysql (or in case you've forgot to start your apache and mysql server). Try updating your servers and make sure that you are using the latest version of PHP.
 
+**▸"Fatal error: Call to a member function bind_param() on boolean"**
+* The prepare() method can return false and you should check for that. As for why it returns false, perhaps the table name or column names (in SELECT or WHERE clause) are not correct. There is an issue with your query. The prepare() might return FALSE (a Boolean), but this generic failure message doesn't leave you much in the way of clues.
+
+
 
 <br />
 <br />
