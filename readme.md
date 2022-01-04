@@ -59,7 +59,7 @@ What is PHP ?
 
 
 ***
-## Technologies and Installization ✅
+## Technologies and Installisation ✅
 ***
 
  XAMPP - INSTALLIZATION:
