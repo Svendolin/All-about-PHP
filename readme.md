@@ -318,7 +318,21 @@ Then it is because you forgot to close a } or ) somewhere. Probably because you 
 * HTTP ERROR 500 is a server error, meaning that you are most likely using an outdated version of apache or mysql (or in case you've forgot to start your apache and mysql server). Try updating your servers and make sure that you are using the latest version of PHP.
 
 **▸"Fatal error: Call to a member function bind_param() on boolean"**
-* The prepare() method can return false and you should check for that. As for why it returns false, perhaps the table name or column names (in SELECT or WHERE clause) are not correct. There is an issue with your query. The prepare() might return FALSE (a Boolean), but this generic failure message doesn't leave you much in the way of clues.
+* The prepare() method can return false and you should check for that. As for why it returns false, perhaps the table name or column names (in SELECT or WHERE clause) are not correct. There is an issue with your query. The prepare() might return FALSE (a Boolean), but this generic failure message doesn't leave you much in the way of clues. BUT HERE COMES A POSSIBLE SOLUTION FOR IT:
+
+**▸"mysqli_stmt::$error -- mysqli_stmt_error — Returns a string description for last statement error"**
+* To get more informations about the error itself, use this to return a string containing the error message for the most recently invoked statement function that can succeed or fail:
+```
+mysqli_stmt_error(mysqli_stmt $statement): string
+
+Here is an example of how to use it:
+
+$stmt = mysqli_stmt_init($connection);
+      if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo 'sql prepare error';
+        echo mysqli_stmt_error($stmt); // => Gives you closer information
+      } 
+```
 
 
 
