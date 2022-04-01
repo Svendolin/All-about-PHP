@@ -138,6 +138,59 @@ However, tinyint would not suffice for the age of a building, since a building c
 
 <br />
 
+🟤 **PRIMARY KEY vs FOREIGN KEY** in PHPMyAdmin:
+* A key must be UNIQUE (A) and MINIMALLY (B) equipped with attributes. It is best to set the PRIMARY KEY at the ID, because:
+
+    A) IDs are most UNIQUE for the respective column and content
+    
+    B) Attributes such as name, street etc. can occur twice. It is best to restrict ourselves to only one attribute
+
+   
+PRIMARY KEY = attribute which a line can be uniquely identified
+
+FOREIGN KEY = Attribute that refers to the primary key of another table
+
+<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://www.researchgate.net/profile/Fernando-Almeida-10/publication/319852638/figure/fig7/AS:539510016806912@1505640619707/presents-an-example-of-two-tables-connected-by-a-foreign-key-The-student-table-contains.png" />
+=> courseId from the upper table receives a foreign key. It thus refers to the primary key of the smaller lower table, which happens to have the same name (but does not have to). We clearly refer to the primary key of the smaller table (contents of the columns also occur above, clear indication that it fits).
+
+=> Fun Fact: Underline means "Primary Key" in the table. It is therefore clear that studentId from the upper table is a primary key.
+
+<br />
+<br />
+
+
+🟣 **JOIN TABLES (Take care writing SQL)**
+
+* If TABLE1 and TABLE2 has the same name of the attribute, like "Hersteller" it's IMPORTANT you write the name like: TABLE1.Hersteller
+
+IN GENERAL - The grey area means: Output matching values:
+<img align="center" alt="phpmyadmin main page" width="800" height="" src="https://dataschool.com/assets/images/how-to-teach-people-sql/sqlJoins/sqlJoins_7.png" />
+
+INNER JOIN = If the columns to be checked do not have a common value, the row is discarded (only column 1 in green is a RELATED COLUMN, 2,3,4 therefore are discarded and not shown):
+
+```sql
+SELECT *
+FROM Table1 join Table2 (Table1,Table2 = Neue Schreibweise)
+WHERE Table1.SpalteRelatedColumn = Table2.SpalteRelatedColumn
+
+```
+
+LEFT JOIN = The numbers in the first table (Table1) are focussed and listed. In addition, the overlapping contents (Table1 and Table2) are shown as we already know from the inner join:
+
+```sql
+SELECT *
+FROM Table1 left join Table2 
+WHERE Table1.SpalteRelatedColumn = Table2.SpalteRelatedColumn
+
+```
+
+<br />
+
+
+
+<br />
+<br />
+
 🟠 **RENAME DATABASE** in PHPMyAdmin:
 
 
@@ -153,9 +206,6 @@ PHPMyAdmin = Web Based Tool // MySQL Workbench = Desktop Tool
 <br />
 
 🔵 **CREATE ADDITIONAL TABLES** in PHPMyAdmin:
-
-
-
 
 1.1 (Variant 1): Open the database on the navigator on the left > Click ``"Neu"`` to ADD ANOTHER TABLE + FIELDS to your chosen database
 
@@ -201,18 +251,10 @@ Did you forgot an additional row of your table inside your database? Or did you 
 * To delete the DATABASE at "SQL", write in the SQL field => DROP DATABASE `` ; (Be sure to add the database name in the '  ' signs!)
 * To delete the TABLE at "SQL", write in the SQL field => DROP TABLE `` ; (Be sure to add the table name in the '  ' signs!)
 
-
-<br />
-
-🟣 **JOIN TABLES**
-
-* A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
-
-
-
 <br />
 <br />
 <br />
+
 
 **MENU BAR IN PHPMyAdmin shortly explained:**
 * BROWSE = Overview
