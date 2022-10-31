@@ -38,20 +38,8 @@ What is PHP ?
 | Week&nbsp;09 | "All in One"-File with: `Registration and Login with MySQL Database management`
 | Week&nbsp;10 | `Image Upload` Basic Variant
 | Week&nbsp;11 | `Image Upload` Advanced Variant
-| Week&nbsp;12 | `CKEditor` for < textareas >
-
-1. [Week_01 - Click this link to enter the corresponding folder of the week 01 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_01_Error%2C%20Basics)
-2. [Week_02 - Click this link to enter the corresponding folder of the week 02 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_02_Arrays%2C%20Schreibweisen%20PHP%20(Blog)%2C%20Include)
-3. [Week_03 - Click this link to enter the corresponding folder of the week 03 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_03_CommentForm%2C%20GetPost%2C%20VarEmail)
-4. [Week_04 - Click this link to enter the corresponding folder of the week 04 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_04_Login%2C%20Cookies%2C%20Sessions)
-5. [Week_05 - Click this link to enter the corresponding folder of the week 05 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_05_Strukturaufbau)
-6. [Week_06 - Click this link to enter the corresponding folder of the week 06 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_06_MySQL_Database)
-7. [Week_07 - Click this link to enter the corresponding folder of the week 07 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_07_TableRef/TableReferences%20%2B%20Beziehungen)
-8. [Week_08 - Click this link to enter the corresponding folder of the week 08 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_08_Sicherheit)
-8. [Week_09 - Click this link to enter the corresponding folder of the week 09 - Provided with German comments]()
-8. [Week_10 - Click this link to enter the corresponding folder of the week 10 - Provided with German comments](https://github.com/Svendolin/All-about-PHP/tree/master/Week_10_Dateiupload%20(Basic))
-8. [Week_11 - Click this link to enter the corresponding folder of the week 11 - Provided with German comments]()
-8. [Week_12 - Click this link to enter the corresponding folder of the week 12 - Provided with German comments]()
+| Week&nbsp;12 | `CKEditor` for < textareas > , 2 versions included: WITH and WITHOUT Database
+| Week&nbsp;13 | `Datetime` |
 
 <br />
 <br />
@@ -62,15 +50,14 @@ What is PHP ?
 ## Technologies and Installisation ✅
 ***
 
- XAMPP - INSTALLIZATION:
+**XAMPP - INSTALLIZATION:**
 * Use XAMPP Windows Systems. Its a local web-server (stack) for your local ideas and projects. [DOWNLOAD XAMPP HERE](https://www.apachefriends.org/de/index.html)
 * Use MAMP if you're working on a MAC: [DOWNLOAD MAMP HERE](https://www.mamp.info/en/mac/)
 * Use WAMP if you want to work with another stack: [DOWNLOAD WAMP HERE](https://www.wampserver.com/en/)
-* 
-<br />
+
 <br />
 
-XAMPP - USEFUL STEPS:
+**XAMPP - FIRST STEPS:**
 
 1. Download and open xampp-control.exe
 2. Start Apache and MySQL
@@ -81,6 +68,19 @@ XAMPP - USEFUL STEPS:
    * II) error_reporting: E_ALL
 6. Navigate through the files via htdocs and open it via Visual Studio Code to work with
 7. Visit your work in your browser. Lifeserver doesnt work, so write "localhost" in your URL of your browser instead
+
+<br />
+
+**XAMPP - RUN YOUR FILES:**
+1. Open XAMPP control panel and start Apache and MySQL
+2. Add the files you want to display in your browser to the htdocs folder by copying and pasting them there:
+
+   2.1 Explorer > htdocs > right click > paste
+
+3. Open your browser and type in "localhost" in the URL of your browser > Click on the file you want to display
+(If you want to display a file in a subfolder, you have to type in the name of the subfolder in the URL of your browser)
+
+4. To STOP XAMPP: stop Apache and MySQL in the XAMPP control panel again
 
 
 <br />
