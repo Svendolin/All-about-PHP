@@ -13,6 +13,13 @@ Direct Link to the place where I'm studying are you going to find [HERE](https:/
 What is PHP ?
 * PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely used and general-purpose open source scripting language that is specifically suited for web programming and can be embedded in HTML.  [GET MORE DETAILS HERE](https://www.php.net/manual/de/intro-whatis.php)
 
+* PHP can generate dynamic page content
+* PHP can create, open, read, write, delete, and close files on the server
+* PHP can collect form data
+* PHP can send and receive cookies
+* PHP can add, delete, modify data in your database
+* PHP can be used to control user-access
+
 * Are you new to PHP? Check out the  [PHP DOCUMENTATION HERE](https://www.php.net/docs.php)
 
 ⚫🔴🟡 IMPORTANT: Comments in each file are commented in german⚫🔴🟡
