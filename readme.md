@@ -89,7 +89,22 @@ What is PHP ?
 
 4. To STOP XAMPP: stop Apache and MySQL in the XAMPP control panel again
 
+<br />
 
+**💥TROUBLESHOOTING in XAMPP:**
+
+PROBLEM A:  _"How to Fix the XAMPP Error “MySQL Shutdown Unexpectedly”?_ [SOLUTION](https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly//)
+
+``` 
+SOLUTION A: 
+
+1) XAMPP > Explorer > mysql > data > Make a copy of it and call it "data-old"
+
+2) Delete the content in the "data" folder
+            
+3) Copy the content of the backup and paste it into the new "data" folder
+           
+ ```
 <br />
 <br />
 
@@ -404,6 +419,10 @@ $stmt = mysqli_stmt_init($connection);
 
 | Questions | Anwers | Changes |
 |:--------------|:-------------:|--------------:|
-| 0 | 0 | 0 |
+| 1 | 1 | 1 |
+
+How to Fix the XAMPP Error “MySQL Shutdown Unexpectedly”?
+
+=> https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly/ (Step 2 worked for me)
 
 
